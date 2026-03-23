@@ -1,0 +1,65 @@
+name: Release Source Archive
+
+# Felix original was built with Visual Studio 2013, which is no longer
+# available on GitHub-hosted runners. This workflow packages and publishes
+# the source code as a release archive so users can download and build
+# with a local VS2013/VS2015 installation.
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create source archive
+        run: |
+          TAG=${{ github.ref_name }}
+          zip -r felix-cat-original-${TAG}-source.zip src/ docs/ manual/ README.md LICENSE
+          tar -czf felix-cat-original-${TAG}-source.tar.gz src/ docs/ manual/ README.md LICENSE
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: "Felix CAT Original ${{ github.ref_name }}"
+          body: |
+            ## Felix CAT Original ${{ github.ref_name }}
+
+            Unmodified archive of the original Felix CAT tool by Ryan Ginstrom (1999–2015).
+            This is the last version published before the project went inactive.
+
+            ### Building from source
+            Felix was built with **Visual Studio 2013 Community Edition**.
+
+            Required libraries (install separately before building):
+            - [WTL](http://sourceforge.net/projects/wtl/)
+            - [Boost](http://www.boost.org/)
+            - [Lua](http://www.lua.org/)
+            - [LuaBridge](https://github.com/vinniefalco/LuaBridge)
+            - [Python 2.7](https://www.python.org/)
+
+            See `README.md` and `src/README.rst` for full build instructions.
+
+            ### Looking for a version that works on Windows 11 / Office 365?
+            Try [Felix Classic](https://github.com/arktos-ai-lab/felix-cat-classic) — a maintained fork
+            updated for VS2022, C++17, and Python 3, maintained by Ernst van Gassen.
+
+            ---
+            MIT licensed. Original work by Ryan Ginstrom.
+
+            [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/VanGassen)
+          files: |
+            felix-cat-original-${{ github.ref_name }}-source.zip
+            felix-cat-original-${{ github.ref_name }}-source.tar.gz
+          draft: false
+          prerelease: false

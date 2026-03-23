@@ -25,7 +25,7 @@ The full Felix Manual 1.7.1.1 is available in two forms:
 
 | Format | Location | Use |
 |--------|----------|-----|
-| HTML (rendered) | [`docs/`](docs/) — via [GitHub Pages](https://your-org.github.io/felix-original/) | Browse in a browser |
+| HTML (rendered) | [`docs/`](docs/) — via [GitHub Pages](https://arktos-ai-lab.github.io/felix-cat-original/) | Browse in a browser |
 | Markdown | [`manual/`](manual/) | Read on GitHub / machine-readable |
 
 The [`docs/index.html`](docs/index.html) is the GitHub Pages entry point with a full table of contents.
@@ -90,4 +90,12 @@ Original copyright: Ryan Ginstrom, 1999–2015.
 Felix was originally hosted at [felix-cat.com](http://felix-cat.com/) (now archived).
 The original source was published on Bitbucket under the MIT license.
 
-See also: [felix-classic](https://github.com/your-org/felix-classic) — a maintained fork updated for the modern toolchain.
+See also: [felix-cat-classic](https://github.com/arktos-ai-lab/felix-cat-classic) — a maintained fork updated for the modern toolchain, by Ernst van Gassen.
+
+## Support & Thanks
+
+If you find Felix useful, consider supporting the preservation and maintenance of this project:
+
+[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/VanGassen)
+
+All original credit goes to **Ryan Ginstrom** who built Felix and released it as open source.
