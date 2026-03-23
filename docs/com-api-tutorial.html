@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns=http://www.w3.org/1999/xhtml style><!--
+ Page saved with SingleFile 
+ url: https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/tutorial.html 
+ saved date: Sun Mar 08 2026 09:35:16 GMT+0100 (Midden-Europese standaardtijd)
+--><meta charset=utf-8>
+<style>:root{--wm-toolbar-height:65px}#wm-ipp form input[type=submit]:hover{background:#eee!important;cursor:pointer!important}#wm-ipp form input[type=submit]:active{transform:translateY(1px)}#wm-ipp a:hover{text-decoration:underline}#wm-ipp a.wm-btn:hover{text-decoration:none;color:#ff0!important}#wm-ipp a.wm-btn:hover span{color:#ff0!important}#wm-ipp .n .d a span.ta:hover{border-color:transparent #77f}#wm-ipp #wm-capinfo a.wm-selector:hover{color:#fff}</style>
+<style>.iconochive-Uplevel:before{content:"↵"}.iconochive-exit:before{content:"🚣"}.iconochive-beta:before{content:"β"}.iconochive-logo:before{content:"🏛"}.iconochive-audio:before{content:"🕨"}.iconochive-movies:before{content:"🎞"}.iconochive-software:before{content:"💾"}.iconochive-texts:before{content:"🕮"}.iconochive-etree:before{content:"🎤"}.iconochive-image:before{content:"🖼"}.iconochive-web:before{content:"🗔"}.iconochive-collection:before{content:"∑"}.iconochive-folder:before{content:"📂"}.iconochive-data:before{content:"🗃"}.iconochive-tv:before{content:"📺"}.iconochive-article:before{content:"🗏"}.iconochive-question:before{content:"⍰"}.iconochive-question-dark:before{content:"?"}.iconochive-info:before{content:"i"}.iconochive-info-small:before{content:"ⓘ"}.iconochive-comment:before{content:"🗩"}.iconochive-comments:before{content:"🗪"}.iconochive-person:before{content:"👤"}.iconochive-people:before{content:"👥"}.iconochive-eye:before{content:"👁"}.iconochive-rss:before{content:"∞"}.iconochive-time:before{content:"🕑"}.iconochive-quote:before{content:"❝"}.iconochive-disc:before{content:"💿"}.iconochive-tv-commercial:before{content:"💰"}.iconochive-search:before{content:"🔍"}.iconochive-search-star:before{content:"✽"}.iconochive-tiles:before{content:"⊞"}.iconochive-list:before{content:"⇶"}.iconochive-list-bulleted:before{content:"⌗"}.iconochive-latest:before{content:"∈"}.iconochive-left:before{content:"˂"}.iconochive-right:before{content:"˃"}.iconochive-left-solid:before{content:"◂"}.iconochive-right-solid:before{content:"▸"}.iconochive-up-solid:before{content:"▴"}.iconochive-down-solid:before{content:"▾"}.iconochive-dot:before{content:"⏤"}.iconochive-dots:before{content:"▦"}.iconochive-columns:before{content:"▯"}.iconochive-sort:before{content:"⇕"}.iconochive-atoz:before{content:"🔤"}.iconochive-ztoa:before{content:"🔥"}.iconochive-upload:before{content:"📤"}.iconochive-download:before{content:"📥"}.iconochive-favorite:before{content:"★"}.iconochive-heart:before{content:"♥"}.iconochive-play:before{content:"▶"}.iconochive-play-framed:before{content:"🎬"}.iconochive-fullscreen:before{content:"⛶"}.iconochive-mute:before{content:"🔇"}.iconochive-unmute:before{content:"🔊"}.iconochive-share:before{content:"🎁"}.iconochive-edit:before{content:"✎"}.iconochive-reedit:before{content:"✐"}.iconochive-gear:before{content:"⚙"}.iconochive-remove-circle:before{content:"❎"}.iconochive-plus-circle:before{content:"🗖"}.iconochive-minus-circle:before{content:"🗕"}.iconochive-x:before{content:"🗙"}.iconochive-fork:before{content:"⋔"}.iconochive-trash:before{content:"🗑"}.iconochive-warning:before{content:"⚠"}.iconochive-flash:before{content:"🗲"}.iconochive-world:before{content:"🗺"}.iconochive-lock:before{content:"🔒"}.iconochive-unlock:before{content:"🔓"}.iconochive-twitter:before{content:"🐦"}.iconochive-facebook:before{content:"f"}.iconochive-googleplus:before{content:"g"}.iconochive-reddit:before{content:"👽"}.iconochive-tumblr:before{content:"T"}.iconochive-pinterest:before{content:"𝓟"}.iconochive-popcorn:before{content:"💥"}.iconochive-email:before{content:"📧"}.iconochive-embed:before{content:"🔗"}.iconochive-gamepad:before{content:"🕹"}.iconochive-Zoom_In:before{content:"+"}.iconochive-Zoom_Out:before{content:"-"}.iconochive-RSS:before{content:"📨"}.iconochive-Light_Bulb:before{content:"💡"}.iconochive-Add:before{content:"⊕"}.iconochive-Tab_Activity:before{content:"⌘"}.iconochive-Forward:before{content:"⏩"}.iconochive-Backward:before{content:"⏪"}.iconochive-No_Audio:before{content:"🔈"}.iconochive-Pause:before{content:"⏸"}.iconochive-No_Favorite:before{content:"☆"}.iconochive-Unike:before{content:"♡"}.iconochive-Song:before{content:"♫"}.iconochive-No_Flag:before{content:"⚐"}.iconochive-Flag:before{content:"⚑"}.iconochive-Done:before{content:"✓"}.iconochive-Check:before{content:"✔"}.iconochive-Refresh:before{content:"⟳"}.iconochive-Headphones:before{content:"🎧"}.iconochive-Chart:before{content:"📈"}.iconochive-Bookmark:before{content:"📑"}.iconochive-Documents:before{content:"📚"}.iconochive-Newspaper:before{content:"📰"}.iconochive-Podcast:before{content:"📶"}.iconochive-Radio:before{content:"📻"}.iconochive-Cassette:before{content:"📼"}.iconochive-Shuffle:before{content:"🔀"}.iconochive-Loop:before{content:"🔁"}.iconochive-Low_Audio:before{content:"🔉"}.iconochive-First:before{content:"🎖"}.iconochive-Invisible:before{content:"🕶"}.iconochive-Computer:before{content:"🖳"}</style>
+<meta content=document name=resource-type>
+<meta content=Software name=classification>
+<meta content="User Guide for the Felix computer aided translation (CAT) solution. Introduction to Felix." name=description>
+<meta content="CAT, translation memory, computer aided translation, software, help, manual" name=keywords>
+<meta content=ALL name=robots>
+<meta content=Global name=distribution>
+<meta content="Safe For Kids" name=rating>
+<meta content="Copyright Ginstrom IT Solutions (GITS)" name=copyright>
+<meta content="Ryan Ginstrom" name=author>
+<meta content=English name=language>
+<meta content=Completed name=doc-class>
+<meta content="Creative Commons" name=doc-rights>
+<title>11.1.1.1. Felix COM API Tutorial — Felix Manual 1.7.1.1 documentation</title>
+<style>*{margin:0px;padding:0px}body{font-family:"Verdana",Arial,sans-serif;line-height:1.4em;color:black;background-color:#eeeeec}div.header,div.content,div.footer{width:70em;margin-left:auto;margin-right:auto}div.header-wrapper{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAABQCAYAAADcMs/mAAAAAXNSR0IArs4c6QAAAAZiS0dEAFUAVwBTkiHDvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9kCEwctBZSG9LMAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAABCUlEQVQ4y12Sy45AIQhDD8Rfn2QyH21nQVG8rhR5lLbx+/cjfJJxEoQASeSuGwAL1HcSCfxYFa3Aki8RkNr1kGDhtq5xjmQEz4/PqmYVSD1D+yZIOU0NFEP6dhMi3O3AUbUOB1b97DG0xlQDAOIAjV67k86cystGI4lsdlTYqiYOatMwUEeneZ9WIS42sZv4YEiiU3NWiGa02eECHUP1puX2HPvgynjYQe7Gji8H6ppdhBSz4U15jFSbhdqW28TfOR928vJuteOIZaqqwQaFYGMVHlNMRlVzrem1JYTpSrEnvfZotAp2fL7ubek1a/R1/Hzk8PiXKmw+xCqaNkSM5aS7zxl6ZJzd/gFE3hujlFg/uwAAAABJRU5ErkJggg==)top left repeat-x;border-bottom:3px solid #2e3436}a{color:#090}div.bodywrapper a,div.footer a{text-decoration:underline}.clearer{clear:both}.left{float:left}.right{float:right}h1,h2,h3{font-family:"Georgia","Times New Roman",serif;font-weight:normal;color:#3465a4;margin-bottom:.8em}h1{color:#204a87}h2{padding-bottom:.5em;border-bottom:1px solid #3465a4}a.headerlink{visibility:hidden;color:#dddddd;padding-left:.3em}h1:hover>a.headerlink,h2:hover>a.headerlink,h3:hover>a.headerlink,h4:hover>a.headerlink,h5:hover>a.headerlink,h6:hover>a.headerlink,dt:hover>a.headerlink{visibility:visible}dt:target{background-color:#fbe54e}.highlight-python{background-color:#cfc;padding:8px;border:1px solid #8f8;margin-bottom:5px}div.header{padding-top:10px;padding-bottom:10px}div.header .headertitle{font-family:"Georgia","Times New Roman",serif;font-weight:normal;font-size:180%;letter-spacing:.08em;margin-bottom:.8em}div.header .headertitle a{color:white}div.header div.rel{margin-top:1em}div.header div.rel a{color:#fcaf3e;letter-spacing:.1em;text-transform:uppercase}div.content-wrapper{background-color:white;padding-top:20px;padding-bottom:20px}div.document{width:50em;float:left}div.body{padding-right:2em;text-align:justify}div.document h1{line-height:120%}div.document .section{margin-top:1.7em}div.document .section:first-child{margin-top:0px}div.document h2{margin-top:.7em}div.document p{margin-bottom:.5em}div.sidebar{width:20em;float:right;font-size:.9em}div.sidebar a,div.header a{text-decoration:none}div.sidebar a:hover,div.header a:hover{text-decoration:underline}div.sidebar h3{color:#2e3436;text-transform:uppercase;font-size:130%;letter-spacing:.1em}div.sidebar ul{list-style-type:none}div.sidebar li.toctree-l1 a{display:block;padding:1px;border:1px solid #dddddd;background-color:#eeeeec;margin-bottom:.4em;padding-left:3px;color:#2e3436}div.sidebar input[type="text"]{width:170px}div.sidebar input[type="submit"]{width:30px}div.footer-wrapper{background:url(data:,)top left repeat-x;border-top:4px solid #babdb6;padding-top:10px;padding-bottom:10px;min-height:80px}div.footer,div.footer a{color:#888a85}div.footer .right{text-align:right}div.footer .left{text-transform:uppercase}div.viewcode-block:target{margin:-1px -3px;padding:0 3px;background-color:#f4debf;border-top:1px solid #ac9;border-bottom:1px solid #ac9}</style>
+<link rel=author title="About these documents" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/about.html>
+<link rel=top title="Felix Manual 1.7.1.1 documentation" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/index.html>
+<link rel=up title="11. Scripting Felix" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting-felix.html>
+<link rel=next title="11.1.1.2. Felix COM API Objects" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/objects.html>
+<link rel=prev title="11. Scripting Felix" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting-felix.html>
+<meta name=referrer content=no-referrer><link rel="shortcut icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAAACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAABAAAAAAAAAACAAACAAAAAgIAAgAAAAIAAgACAgAAAwMDAAMDcwADwyqYABAQEAAgICAAMDAwAERERABYWFgAcHBwAIiIiACkpKQBVVVUATU1NAEJCQgA5OTkAgHz/AFBQ/wCTANYA/+zMAMbW7wDW5+cAkKmtAAAAMwAAAGYAAACZAAAAzAAAMwAAADMzAAAzZgAAM5kAADPMAAAz/wAAZgAAAGYzAABmZgAAZpkAAGbMAABm/wAAmQAAAJkzAACZZgAAmZkAAJnMAACZ/wAAzAAAAMwzAADMZgAAzJkAAMzMAADM/wAA/2YAAP+ZAAD/zAAzAAAAMwAzADMAZgAzAJkAMwDMADMA/wAzMwAAMzMzADMzZgAzM5kAMzPMADMz/wAzZgAAM2YzADNmZgAzZpkAM2bMADNm/wAzmQAAM5kzADOZZgAzmZkAM5nMADOZ/wAzzAAAM8wzADPMZgAzzJkAM8zMADPM/wAz/zMAM/9mADP/mQAz/8wAM///AGYAAABmADMAZgBmAGYAmQBmAMwAZgD/AGYzAABmMzMAZjNmAGYzmQBmM8wAZjP/AGZmAABmZjMAZmZmAGZmmQBmZswAZpkAAGaZMwBmmWYAZpmZAGaZzABmmf8AZswAAGbMMwBmzJkAZszMAGbM/wBm/wAAZv8zAGb/mQBm/8wAzAD/AP8AzACZmQAAmTOZAJkAmQCZAMwAmQAAAJkzMwCZAGYAmTPMAJkA/wCZZgAAmWYzAJkzZgCZZpkAmWbMAJkz/wCZmTMAmZlmAJmZmQCZmcwAmZn/AJnMAACZzDMAZsxmAJnMmQCZzMwAmcz/AJn/AACZ/zMAmcxmAJn/mQCZ/8wAmf//AMwAAACZADMAzABmAMwAmQDMAMwAmTMAAMwzMwDMM2YAzDOZAMwzzADMM/8AzGYAAMxmMwCZZmYAzGaZAMxmzACZZv8AzJkAAMyZMwDMmWYAzJmZAMyZzADMmf8AzMwAAMzMMwDMzGYAzMyZAMzMzADMzP8AzP8AAMz/MwCZ/2YAzP+ZAMz/zADM//8AzAAzAP8AZgD/AJkAzDMAAP8zMwD/M2YA/zOZAP8zzAD/M/8A/2YAAP9mMwDMZmYA/2aZAP9mzADMZv8A/5kAAP+ZMwD/mWYA/5mZAP+ZzAD/mf8A/8wAAP/MMwD/zGYA/8yZAP/MzAD/zP8A//8zAMz/ZgD//5kA///MAGZm/wBm/2YAZv//AP9mZgD/Zv8A//9mACEApQBfX18Ad3d3AIaGhgCWlpYAy8vLALKysgDX19cA3d3dAOPj4wDq6uoA8fHxAPj4+ADw+/8ApKCgAICAgAAAAP8AAP8AAAD//wD/AAAA/wD/AP//AAD///8A////////////////////////////Jycn////////////////Jy4uAif//////////////ycCWzQn//////////////8nAlZVJ///////////////J1VWWyf//////////////ycCfX1PJycnJ////////ycnAp6fnn1WNCcn/////ycnVZefwp94VScn////////JydWwhtPJyf///////////8nAsIbCHhWJyf/////////J1zCGxuffVYuJ////////ydVl3iYUCcnJ/////////8nJydWfSf///////////////8nJycn////////////////////////////////AAD4/wAA8H8AAPB/AADwfwAA8H8AAPAHAADgAwAAwAcAAOAfAADwBwAA8AMAAPAHAADwPwAA/D8AAP//AAA="><link rel=canonical href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/tutorial.html><meta http-equiv=content-security-policy content="default-src 'none'; font-src 'self' data:; img-src 'self' data:; style-src 'unsafe-inline'; media-src 'self' data:; script-src 'unsafe-inline' data:; object-src 'self' data:; frame-src 'self' data:;"></head>
+ <body>
+ <div class=header-wrapper>
+ <div class=header>
+ <div class=headertitle><a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/index.html>Felix Manual 1.7.1.1 documentation</a></div>
+ <div class=rel>
+ <a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting-felix.html title="11. Scripting Felix" accesskey=P>previous</a> |
+ <a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/objects.html title="11.1.1.2. Felix COM API Objects" accesskey=N>next</a> |
+ <a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/genindex.html title="General Index" accesskey=I>index</a>
+ </div>
+ </div>
+ </div>
+ <div class=content-wrapper>
+ <div class=content>
+ <div class=document>
+ 
+ <div class=documentwrapper>
+ <div class=bodywrapper>
+ <div class=body>
+ 
+ <div class=section id=felix-com-api-tutorial>
+<span id=index-0></span><h1>11.1.1.1. Felix COM API Tutorial<a class=headerlink href=#felix-com-api-tutorial title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will show you how to get started scripting Felix via the COM API. We’ll be using Microsoft Word’s <a class="reference external" href=https://web.archive.org/web/20181005073650/http://en.wikipedia.org/wiki/Visual_Basic_for_Applications>VBA</a> as the tutorial environment.</p>
+<div class=section id=start-word-and-open-visual-basic>
+<h2>11.1.1.1.1. Start Word and Open Visual Basic<a class=headerlink href=#start-word-and-open-visual-basic title="Permalink to this headline">¶</a></h2>
+<p>Start MS Word, and open the Visual Basic for Applications editor. You can do this by pressing ALT+F11, or from the Developer tab, clicking <strong>Visual Basic</strong>.</p>
+</div>
+<div class=section id=create-a-new-module>
+<h2>11.1.1.1.2. Create a New Module<a class=headerlink href=#create-a-new-module title="Permalink to this headline">¶</a></h2>
+<p>In the left pane, there should be a “Normal” node. Expand this, and right click on the “Modules” folder.</p>
+<p>From the context menu, select <strong>Insert</strong> &gt;&gt; <strong>Module</strong>. This is where we’ll be putting in our code.</p>
+</div>
+<div class=section id=write-macro-to-launch-felix>
+<h2>11.1.1.1.3. Write Macro to Launch Felix<a class=headerlink href=#write-macro-to-launch-felix title="Permalink to this headline">¶</a></h2>
+<p>Now, let’s write a couple of macro routines.</p>
+<p>First, add this routine to the module you just created. It launches Felix and makes it visible:</p>
+<div class=highlight-python><pre>Sub LaunchFelix()
+
+    Dim felix As Object
+    Set felix = CreateObject("Felix.App")
+    felix.Visible = True
+
+End Sub</pre>
+</div>
+<p>Now, put your cursor somewhere in the macro, and press F5 to run it. Felix should now be launched and visible, if it wasn’t already.</p>
+</div>
+<div class=section id=add-some-translations-to-the-tm>
+<h2>11.1.1.1.4. Add Some Translations to the TM<a class=headerlink href=#add-some-translations-to-the-tm title="Permalink to this headline">¶</a></h2>
+<p>Next, we’ll add a couple of translation entries.</p>
+<p>Add the following macro to your module, and run it in the same way:</p>
+<div class=highlight-python><pre>Sub AddMemoryEntries()
+
+    Dim felix As Object
+    Set felix = CreateObject("Felix.App")
+    felix.Visible = True
+
+    ' add some entries
+    felix.AddMemoryEntry "source 1", "trans 1", "context 1"
+    felix.AddMemoryEntry "source 2", "trans 2", "context 2"
+
+End Sub</pre>
+</div>
+<p>Check the Felix window. There should be two entries in the TM.</p>
+</div>
+<div class=section id=add-a-glossary-entry>
+<h2>11.1.1.1.5. Add a Glossary Entry<a class=headerlink href=#add-a-glossary-entry title="Permalink to this headline">¶</a></h2>
+<p>Next, add a glossary entry. The procedure is very similar to adding TM entries:</p>
+<div class=highlight-python><pre>Sub AddGlossaryEntries()
+
+    Dim felix As Object
+    Set felix = CreateObject("Felix.App")
+    felix.Visible = True
+
+    ' add some entries
+    felix.AddGlossaryEntry "gloss 1", "abc", "context 1"
+
+End Sub</pre>
+</div>
+<p>You should now have one entry in your glossary.</p>
+</div>
+<div class=section id=save-the-tm-and-glossary>
+<h2>11.1.1.1.6. Save the TM and Glossary<a class=headerlink href=#save-the-tm-and-glossary title="Permalink to this headline">¶</a></h2>
+<p>Finally, we’ll save the TM and glossary we created. Add and run this macro:</p>
+<div class=highlight-python><pre>Sub SaveMemoryAndGlossary()
+
+    Dim felix As Object
+    Set felix = CreateObject("Felix.App")
+    felix.Visible = True
+
+    ' Create the gloss and mem objects
+    Dim mem, gloss As Object
+    Set mem = felix.App2.Memories.Item(1)
+    Set gloss = felix.App2.Glossaries.Item(1)
+
+    ' Save the TM and glossary
+    mem.SaveAs "c:\my_tm.ftm"
+    gloss.SaveAs "c:\my_gloss.fgloss"
+
+End Sub</pre>
+</div>
+<p>Check your C drive; you should find the TM “my_tm.ftm”, and the glossary “my_gloss.fgloss”.</p>
+<p>See the <a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/samples.html><em>Felix COM API Code Samples</em></a> for more sample code, and <a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/objects.html><em>Felix COM API Objects</em></a> for a list of all the available objects.</p>
+</div>
+</div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class=sidebar>
+ <h3>Table Of Contents</h3>
+ <ul>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/tutorial-word.html>Quick-start Tutorial Using MS Word</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/tutorial-ppt.html>Quick-start Tutorial Using MS PowerPoint</a></li>
+</ul>
+<ul>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/about.html>1. About Felix</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/getting-started.html>2. Getting Started</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/first-time.html>3. Using Felix for the First Time</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/getting-around.html>4. Getting around in Felix</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/menus.html>5. The Menus</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/placement.html>6. The Placement Feature</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/word.html>7. Using Felix from Word</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/excel.html>8. Using Felix from Excel</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/powerpoint.html>9. Using Felix from PowerPoint</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/faq.html>10. FAQ</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting-felix.html>11. Scripting Felix</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/customizing-templates.html>12. Customizing Felix Templates</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/troubleshooting.html>13. Troubleshooting Felix</a></li>
+<li class=toctree-l1><a class="reference internal" href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/whats-new.html>14. What’s New in Felix</a></li>
+</ul>
+ <h3 style=margin-top:1.5em>Search</h3>
+ <form class=search action=/web/20181005073650/http://felix-cat.com/media/manuals/felix/search.html>
+ <input type=text name=q value>
+ <input type=submit value=Go>
+ 
+ 
+ </form>
+ <p class=searchtip style=font-size:90%>
+ Enter search terms or a module, class or function name.
+ </p>
+ </div>
+ <div class=clearer></div>
+ </div>
+ </div>
+ <div class=footer-wrapper>
+ <div class=footer>
+ <div class=left>
+ <a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting-felix.html title="11. Scripting Felix">previous</a> |
+ <a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/scripting/objects.html title="11.1.1.2. Felix COM API Objects">next</a> |
+ <a href=https://web.archive.org/web/20181005073650/http://felix-cat.com/media/manuals/felix/genindex.html title="General Index">index</a>
+ </div>
+ <div class=right>
+ 
+ <div class=footer>
+ © Copyright 2012, Ryan Ginstrom.
+ Last updated on Jan 02, 2015.
+ </div>
+ </div>
+ <div class=clearer></div>
+ </div>
+ </div>
+ 

@@ -1,0 +1,74 @@
+# Visual Studio
+*.user
+*.suo
+*.vc.db
+*.vc.opendb
+*.vcxproj.filters
+*.opensdf
+*.sdf
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+*.obj
+*.pch
+*.idb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+# Build output directories
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Generated files
+*.generated.cs
+
+# InnoSetup output
+Output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Mercurial metadata (never commit)
+src/.hg/
+
+# IntelliSense cache (large binaries)
+*.ipch
+ipch/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
