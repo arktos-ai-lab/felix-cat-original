@@ -1,0 +1,123 @@
+## index.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>${item["name"]}</h1>
+<% id = item["id"] %>
+
+<table class="props">
+    <tr>
+        <th>Connection</th>
+        <td>http://${host}:${port}/api/mems/${id}/</td>
+    </tr>
+    <tr>
+        <th>Record count</th>
+        <td>${num}</td>
+    </tr>
+    <tr>
+        <th>Created by</th>
+        <td>${item["creator"]}</td>
+    </tr>
+    <tr>
+        <th>Source language</th>
+        <td>${item["source_language"]}</td>
+    </tr>
+    <tr>
+        <th>Target language</th>
+        <td>${item["target_language"]}</td>
+    </tr>
+    <tr>
+        <th>Percent validated</th>
+        <td>${item["validated"]}%</td>
+    </tr>
+    <tr>
+        <th>Reliability: low&ndash;high (ave)</th>
+        <td>${item["reliability"]["low"]}&ndash;${item["reliability"]["high"]} (${item["reliability"]["ave"]})</td>
+    </tr>
+    <tr>
+        <th>Client</th>
+        <td>${item["client"]}</td>
+    </tr>
+    <tr>
+        <th>Notes</th>
+        <td>${item["notes"]}</td>
+    </tr>
+</table>
+
+<div id="dialog_${id}" title="Delete ${item["name"]}" style="display:none;">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The memory/glossary and all records in it will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+<h2>Actions for ${item["name"]}</h2>
+
+<table border="0">
+    <tr>
+        <td style="border:none;" valign="top">
+            <ul>
+                <li><a href="/${dirname}/download/${id}">Download</a></li>
+                <li><a href="/${dirname}/download-tmx/${id}">Download As TMX...</a></li>
+                <li><a href="/${dirname}/browse/${id}/1">Browse</a></li>
+            </ul>
+        </td>
+        <td style="border:none;" valign="top">
+            <ul>
+                <li><a href="/records/add/${id}/">Add Record</a></li>
+                <li><a href="/${dirname}/search/${id}">Search</a></li>
+                <li><a href="/${dirname}/replace/${id}">Replace</a></li>
+            </ul>
+        </td>
+        <td style="border:none;" valign="top">
+            <ul>
+                <li><a href="/${dirname}/merge/${id}">Upload and Merge</a></li>
+    % if is_admin:
+                <li><a href="/${dirname}/edit/${id}">Edit properties</a></li>
+                <li><a href="/${dirname}/delete/${id}" id="delete_${id}">Delete</a></li>
+    % endif
+            </ul>
+        </td>
+    </tr>
+</table>
+
+<h2>General Actions</h2>
+<ul>
+    <li><a href="/${dirname}/">List ${dirname}</a></li>
+    <li><a href="/${dirname}/add">Create</a></li>
+</ul>
+
+</%def>
+
+<%def name="javascript()">
+<script type="text/javascript">
+$(function() {
+    //set effect from select menu value
+    $("#delete_${id}").click(function() {
+        $("#dialog_${id}").show();
+		$("#dialog_${id}").dialog({
+			bgiframe: true,
+			resizable: true,
+			height:300,
+			modal: true,
+			overlay: {
+				backgroundColor: '#000',
+				opacity: 0.5
+			},
+			buttons: {
+				'Delete': function() {
+					$(this).dialog('close');
+                    window.location.href = "/${dirname}/delete/${id}" ;
+				},
+				Cancel: function() {
+					$(this).dialog('close');
+                    window.location.href = "${current_page}" ;
+				}
+			}
+		});
+
+        return false ;
+	});
+});
+</script>
+</%def>

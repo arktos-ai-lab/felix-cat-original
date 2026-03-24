@@ -1,0 +1,65 @@
+## edit.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+<h1>Download ${item["name"]} as TMX File</h1>
+
+${msg}
+
+<p>Select the source and translation languages for the TMX file.</p>
+
+    <form action="/${dirname}/submittmx/${item["id"]}" method="post">
+    <fieldset>
+
+    <table class="form">
+        <tr>
+            <td><label for="source">Source Language</label></td>
+            <td>
+                    <select name="source" id="source">
+                        % for name, value in languages:
+                        <option
+                            value="${value}"
+                            % if name == sourcelang or value == sourcelang:
+                            selected="selected"
+                            % endif
+                            >
+                        ${name}
+                        </option>
+                        % endfor
+                    </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="target">Translation Language</label></td>
+            <td>
+                    <select name="trans" id="trans">
+                        % for name, value in languages:
+                        <option
+                            value="${value}"
+                            % if name == translang or value == translang:
+                            selected="selected"
+                            % endif
+                            >
+                        ${name}
+                        </option>
+                        % endfor
+                    </select>
+            </td>
+        </tr>
+
+    </table>
+
+    </fieldset>
+        <div>
+            <input type="submit" value="Download" />
+        </div>
+    </form>
+
+<p style="margin-top: 20px;">
+    <a href="/${dirname}/view/${item["id"]}">View ${item["name"]}</a>
+</p>
+
+
+</%def>

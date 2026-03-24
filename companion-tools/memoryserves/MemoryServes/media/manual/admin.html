@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>The Admin Interface &mdash; Memory Serves 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Memory Serves 2.0 documentation" href="index.html" />
+    <link rel="next" title="Memory Importer" href="memory-importer.html" />
+    <link rel="prev" title="Downloading" href="downloading.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="memory-importer.html" title="Memory Importer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="downloading.html" title="Downloading"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="the-admin-interface">
+<h1>The Admin Interface<a class="headerlink" href="#the-admin-interface" title="Permalink to this headline">¶</a></h1>
+<p>As of version 1.3, Memory Serves has an admin interface. Use it to manage and create user accounts, view logs, and view and set preferences.</p>
+<p>To access the Admin page, click on the &lt;strong&gt;Admin&lt;/strong&gt; link on the bottom of the page, to the right of the copyright notice.</p>
+<div class="section" id="users">
+<h2>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h2>
+<p>The Users page shows a list of user accounts. If you&#8217;re logged in as an administrator, you&#8217;ll see three links next to each account: View, Edit, and Delete.</p>
+<p>If you&#8217;re not logged in, or you&#8217;re logged in as a non-administrator, then there will only be a &#8220;View&#8221; link next to each account. If you&#8217;re logged in as a non-administrator, you can edit your own user account (e.g. setting a new password), but nobody else&#8217;s. You also can&#8217;t change your account type from &#8220;user&#8221; to &#8220;admin&#8221; &#8211; an administrator account is needed to do that.</p>
+<p>On the <a class="reference internal" href="#preferences"><em>Set Preferences</em></a> page, you can configure the preferences for each user type: admin, user, guest, and &#8220;anon&#8221; (users who are not logged in are treated as &#8220;anon&#8221;).</p>
+</div>
+<div class="section" id="logs">
+<h2>Logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h2>
+<p>There are three types of log: the Memory Serves log, the server error log, and the server access log. If you run into an error using Memory Serves, the Memory Serves log and the server error log can provide details about what went wrong.</p>
+<p>If you&#8217;re logged in as an administrator, you can clear the Memory Serves log. The server logs are cleared each time Memory Serves is started.</p>
+</div>
+<div class="section" id="set-preferences">
+<span id="preferences"></span><span id="index-0"></span><h2>Set Preferences<a class="headerlink" href="#set-preferences" title="Permalink to this headline">¶</a></h2>
+<p><strong>One translation per source</strong></p>
+<blockquote>
+<div>Select this option to only allow one translation per source segment. A restart of Memory Serves is required for this to take effect.</div></blockquote>
+<dl class="docutils">
+<dt><strong>Normalize</strong></dt>
+<dd><p class="first">You can set three types of preferences for determining how Memory Serves calculates translation and glossary matches.</p>
+<dl class="last docutils">
+<dt>Normalize case</dt>
+<dd>Treat upper and lower-case letters as being identical for matching purposes (case-insensitive matching).</dd>
+<dt>Normalize hiragana/katakana</dt>
+<dd>Treat Hiragana and Katakana characters as being identical for matching purposes.</dd>
+<dt>Normalize width</dt>
+<dd>Treat single-byte and double-byte characters as being identical for matching purposes.</dd>
+</dl>
+</dd>
+<dt><strong>System Tray</strong></dt>
+<dd><p class="first">You can also choose whether to show a Memory Serves icon in the task (system) tray.</p>
+<dl class="last docutils">
+<dt>Show system tray</dt>
+<dd>Show the system tray icon when Memory Serves is running.</dd>
+</dl>
+</dd>
+</dl>
+<p><strong>Data Folder</strong></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Data folder</dt>
+<dd>Specify the folder in which to store the Memory Serves TMs and glossaries (the default is the local app data folder or program data folder, depending on your installation preferences).</dd>
+</dl>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">The Admin Interface</a><ul>
+<li><a class="reference internal" href="#users">Users</a></li>
+<li><a class="reference internal" href="#logs">Logs</a></li>
+<li><a class="reference internal" href="#set-preferences">Set Preferences</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="downloading.html"
+                        title="previous chapter">Downloading</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="memory-importer.html"
+                        title="next chapter">Memory Importer</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="memory-importer.html" title="Memory Importer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="downloading.html" title="Downloading"
+             >previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+        <div class="footer">Documentation for <a href="/">Memory Serves</a></div>
+
+  </body>
+</html>

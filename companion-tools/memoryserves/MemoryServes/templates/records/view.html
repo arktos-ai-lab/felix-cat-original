@@ -1,0 +1,59 @@
+## index.html
+<%inherit file="../base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Viewing record</h1>
+
+<table class="props">
+    <tr>
+        <th>Source</th>
+        <td>${record.source}</td>
+    </tr>
+    <tr>
+        <th>Translation</th>
+        <td>${record.trans}</td>
+    </tr>
+    <tr>
+        <th>Context</th>
+        <td>${record.context}</td>
+    </tr>
+    <tr>
+        <th>Reliability</th>
+        <td>${record.reliability}</td>
+    </tr>
+    <tr>
+        <th>Validated</th>
+        <td>${record.validated}</td>
+    </tr>
+    <tr>
+        <th>Ref count</th>
+        <td>${record.ref_count}</td>
+    </tr>
+    <tr>
+        <th>Date created</th>
+        <td>${record.date_created}</td>
+    </tr>
+    <tr>
+        <th>Created by</th>
+        <td>${record.created_by}</td>
+    </tr>
+    <tr>
+        <th>Last modified</th>
+        <td>${record.last_modified}</td>
+    </tr>
+    <tr>
+        <th>Modified by</th>
+        <td>${record.modified_by}</td>
+    </tr>
+</table>
+
+<ul>
+    <li><a href="/${dirname}/view/${mem_id}">View ${memtype}</a></li>
+    <li><a href="/records/edit/${mem_id}/${record.id}">Edit Record</a></li>
+    <li><a href="/records/delete/${mem_id}/${record.id}/?next=/${dirname}/browse/${mem_id}/${page}">Delete Record</a></li>
+</ul>
+
+</%def>

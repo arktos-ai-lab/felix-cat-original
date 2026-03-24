@@ -1,0 +1,42 @@
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memory Serves Users</h1>
+
+% if users:
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    % for person in users:
+        <tr>
+            <td><a href="view/${person["id"]}">${person["name"]}</a></td>
+            <td align="right">${person["role"]}</td>
+            <td>
+                <a href="/users/view/${person["id"]}">View</a>
+            % if is_admin:
+                | <a href="/users/edit/${person["id"]}">Edit</a>
+                | <a href="/users/delete/${person["id"]}">Delete</a>
+            % endif
+            </td>
+        </tr>
+    % endfor
+    </table>
+% else:
+    <p style="color:#888;">No users</p>
+% endif
+
+<h2>Actions</h2>
+<ul>
+    <li><a href="/admin/">Admin</a></li>
+    <li><a href="/users/add/">Create Account</a></li>
+% if is_admin:
+    <li><a href="/users/permissions">Configure Permissions</a></li>
+% endif
+</ul>
+</%def>

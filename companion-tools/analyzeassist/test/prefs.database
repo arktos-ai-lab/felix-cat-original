@@ -1,0 +1,12 @@
+(dp1
+S'analyze numbers'
+p2
+I00
+sS'fuzzy options'
+p3
+(dp4
+S'directory'
+p5
+NsS'extension'
+p6
+Nss.

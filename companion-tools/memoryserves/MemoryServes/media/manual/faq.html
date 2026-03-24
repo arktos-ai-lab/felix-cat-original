@@ -1,0 +1,128 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Memory Serves FAQ &mdash; Memory Serves 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Memory Serves 2.0 documentation" href="index.html" />
+    <link rel="prev" title="Memory Importer" href="memory-importer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="memory-importer.html" title="Memory Importer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="memory-serves-faq">
+<span id="index-0"></span><h1>Memory Serves FAQ<a class="headerlink" href="#memory-serves-faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-if-i-forget-my-admin-password">
+<h2>What if I forget my admin password?<a class="headerlink" href="#what-if-i-forget-my-admin-password" title="Permalink to this headline">¶</a></h2>
+<p>If you forget your admin password, you can clear the users from the database and create a new admin account using the <strong>Clear Users</strong> utility. On Windows XP, this utility will be found from the <strong>Start</strong> menu, under
+<strong>All Programs</strong> &gt;&gt; <strong>Memory Serves</strong> &gt;&gt; <strong>Clear Users</strong>.</p>
+<p>The next time you start <strong>Memory Serves</strong>, it will take you to the welcome page, and you&#8217;ll be able to create a new admin account. Don&#8217;t forget it this time!</p>
+<p>Note that Memory Serves must not be running when you clear the user names, because doing so modifies the database on disk. If you try clearing the user accounts while Memory Serves is running, an error message will appear, and the program will quit immediately.</p>
+</div>
+<div class="section" id="how-does-the-server-work">
+<h2>How does the server work?<a class="headerlink" href="#how-does-the-server-work" title="Permalink to this headline">¶</a></h2>
+<p>When you run Memory Serves, it starts a small HTTP Web server on your computer. Memory Serves uses the open-source <a class="reference external" href="http://www.cherrypy.org/">cherrypy</a> Web server to do this.</p>
+<p>The server can only be seen by other computers on your LAN or VPN, and not the Internet as a whole.</p>
+<p>All data sent to and from Memory Serves &#8211; e.g. from Felix, or from a Web browser &#8211; uses the HTTP protocol.</p>
+</div>
+<div class="section" id="the-server-times-out-if-i-upload-a-large-memory-is-my-memory-uploaded-correctly">
+<h2>The server times out if I upload a large memory. Is my memory uploaded correctly?<a class="headerlink" href="#the-server-times-out-if-i-upload-a-large-memory-is-my-memory-uploaded-correctly" title="Permalink to this headline">¶</a></h2>
+<p>If you upload a very large memory to Memory Serves, the upload page might time out before the upload is complete. If this happens, you&#8217;ll get an error, but the file should be uploaded correctly. You can check this by viewing the memory, and making sure that it has the expected number of entries (records).</p>
+<p>If you&#8217;re uploading a very large memory or glossary file, you might consider using the <a class="reference internal" href="memory-importer.html"><em>Memory Importer</em></a> program that comes with Memory Serves.</p>
+</div>
+<div class="section" id="are-there-any-limitations-to-memory-serves">
+<h2>Are there any limitations to Memory Serves?<a class="headerlink" href="#are-there-any-limitations-to-memory-serves" title="Permalink to this headline">¶</a></h2>
+<p>There are no limitations on the number of connections, memories, glossaries, or anything else about Memory Serves. The only limitations to Memory Serves are those of your computer&#8217;s processing speed, and the process memory limit.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Memory Serves FAQ</a><ul>
+<li><a class="reference internal" href="#what-if-i-forget-my-admin-password">What if I forget my admin password?</a></li>
+<li><a class="reference internal" href="#how-does-the-server-work">How does the server work?</a></li>
+<li><a class="reference internal" href="#the-server-times-out-if-i-upload-a-large-memory-is-my-memory-uploaded-correctly">The server times out if I upload a large memory. Is my memory uploaded correctly?</a></li>
+<li><a class="reference internal" href="#are-there-any-limitations-to-memory-serves">Are there any limitations to Memory Serves?</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="memory-importer.html"
+                        title="previous chapter">Memory Importer</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="memory-importer.html" title="Memory Importer"
+             >previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+        <div class="footer">Documentation for <a href="/">Memory Serves</a></div>
+
+  </body>
+</html>

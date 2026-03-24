@@ -1,0 +1,22 @@
+syntax: glob
+apidocs/*
+nightly/*.exe
+build/*
+AnalyzeAssist/*
+CountAnything/*
+nightly/backup/*
+*.pyc
+*~
+.coverage
+glob:Setup/*
+glob:prefs.database
+.idea/*
+htmlcov/*
+view/codez.zip
+aa.prof
+test/analysis.txt
+# pulp stuff
+*-pulp.mps
+debug.lp
+
+analysis.txt

@@ -1,0 +1,20 @@
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>User "${viewuser["name"]}"</h1>
+
+<p>Role: ${viewuser["role"]}</p>
+
+<h2>Actions</h2>
+<ul>
+    <li><a href="/users/">List Users</a></li>
+% if is_admin:
+    <li><a href="/users/edit/${viewuser["id"]}">Edit Account Info</a></li>
+    <li><a href="/users/delete/${viewuser["id"]}">Delete Account</a></li>
+% endif
+</ul>
+
+</%def>

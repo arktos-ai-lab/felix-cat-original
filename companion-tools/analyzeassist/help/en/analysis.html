@@ -1,0 +1,100 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+
+    <p>AnalyzeAssist analyzes the files you specify against the specified list of memories.
+        It displays a report of how many matches there are for your documents in the specified memories.
+        You can specify any match ranges you like; AnalyzeAssist will report how many segments in your documents fall
+        into each match range (along with corresponding word/character counts).</p>
+
+    <p>The default match ranges are as follows:</p>
+
+    <hr/>
+    <!-- defaultMatchRanges -->
+<pre>
+100%
+95-99%
+85-94%
+0-84%
+</pre>
+    <hr/>
+
+    <p>
+        The format is simple: one range to a line, consisting of either one number or a range of numbers (smallest to
+        largest), optionally separated by a hyphen (-), and with optional percent signs (%).
+    </p>
+
+    <p>The following are some examples of acceptable ranges.
+
+    <p>
+    <hr/>
+    <!-- goodRanges -->
+<pre>
+100%
+95-99
+85%-94%
+50 - 84
+25 49
+1% 24%
+0
+</pre>
+    <hr/>
+
+    <p>The following are some examples of <b><font color="red">incorrect</font></b> ranges.
+
+    <p>
+    <hr/>
+    <!-- badRanges -->
+    <p style="color:red">
+        100%-95 (reason: bigger followed by smaller)<br/>
+        95-99-88 (reason: more than two numbers on a line)<br/>
+        50 to 84 (reason: numbers separated by word "to")
+    </p>
+    <hr/>
+
+
+    <p>You can edit these defaults in the file <!-- matchSettingsFile -->"match_ranges.txt", or (recommended) from
+        AnalyzeAssist directly, by accessing the <b>Tools</b> &gt;&gt; <b>Preferences</b> menu. You can also set this
+        preference in the <a href="analysiswizard.html">Analysis Wizard</b>.
+    </p>
+
+    <a name="SeeAlsoBookmark"></a>
+
+    <h1 class=heading>See Also</h1>
+
+    <div id=SeeAlsoSection class=section>
+        <p>
+            <a href="index.html">Help Contents</a>
+        </p>
+
+        <p>
+            <a href="analysiswizard.html">The Analysis Wizard</a>
+        </p>
+
+        <p>
+            <a href="preferences.html">The Preferences Dialog</a>
+        </p>
+
+        <p>
+            <a href="analyze_files.html">The analyze_files command-line utility</a>
+        </p>
+    </div>
+
+
+</div>
+<div id="pagefooter">
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+    <hr size=1>
+    <p>Copyright &copy; Ginstrom IT Solututions (GITS)</p>
+</div>
+</div>
+</body>
+</html>

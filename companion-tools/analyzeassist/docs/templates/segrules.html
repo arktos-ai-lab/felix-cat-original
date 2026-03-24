@@ -1,0 +1,53 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">Segmentation Rules</h1>
+
+    <p>To configure the segmentation rules from AnalyzeAssist, use the <b>Tools</b> &gt;&gt; <b>Preferences</b> menu
+        (recommended).
+
+    <p>
+        You can also directly edit the "segrules.txt" file in the application directory.
+        This file contains the rules for segmenting text. The defaults are as follwos:</p>
+
+    <hr/>
+    <!-- defaultSegrules -->
+<pre>
+StopChars = .!?。．！？
+SegControlChars = true
+IgnoreNumberSegs = true
+</pre>
+    <hr/>
+
+    <p>The meanings of each setting are as follows.</p>
+
+    <dl>
+        <dt>StopChars</dt>
+        <dd>These are the characters that mark the end of a segment (typically a sentence).</dd>
+
+        <dt>SegControlChars</dt>
+        <dd>Whether control characters (such as tabs) mark the end of a segment. Set to false if segments contain
+            control characters. true/false
+        </dd>
+
+        <dt>IgnoreNumberSegs</dt>
+        <dd>Ignore segments consisting entirely of numbers. true/false</dd>
+
+    </dl>
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

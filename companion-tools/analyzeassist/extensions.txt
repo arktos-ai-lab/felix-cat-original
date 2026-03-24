@@ -1,0 +1,8 @@
+XmlFiles = *.xml;*.ftm;*.fgloss
+WordFiles = *.doc;*.rtf
+TextFiles = *.txt
+ExcelFiles = *.xls;*.csv
+HtmlFiles = *.html;*.htm;*.shtml;*.mht;*.php
+PdfFiles = *.pdf
+PptFiles = *.ppt
+OpenOfficeFiles = *.odt;*.ods;*.odp

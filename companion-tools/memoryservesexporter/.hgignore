@@ -1,0 +1,11 @@
+syntax: glob
+.idea/*
+*.pyc
+.coverage
+coverage.xml
+nosetests.xml
+htmlcov/*
+build/MemoryServesExporter/*
+build/Setup/MemoryServesExporter-Setup_*
+build/Setup/MemoryServesExporter_Setup*
+build/MemoryServesExporterInstallScript.iss

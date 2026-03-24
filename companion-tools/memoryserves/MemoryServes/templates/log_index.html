@@ -1,0 +1,44 @@
+## index.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memory Serves Log</h1>
+
+% if entries:
+    <table>
+        <tr>
+            <th>Severity</th>
+            <th>Time</th>
+            <th>Message</th>
+            <th>User</th>
+        </tr>
+    % for entry in entries:
+        <tr class="${entry["severity"]}">
+            <td>${entry["severity"]}</td>
+            <td>${entry["when"]}</td>
+            <td>${entry["message"]}</td>
+            <td>${entry["user"]}</td>
+        </tr>
+    % endfor
+    </table>
+% else:
+    <p style="color:#888;">No log entries</p>
+% endif
+
+<p>Log |
+    <a href="/log/errorlog">Server Error Log</a> |
+    <a href="/log/serverlog">Server Access Log</a>
+</p>
+
+<h3>Actions</h3>
+<ul>
+% if is_admin:
+    <li><a href="/log/clear/">Clear Log</a></li>
+% endif
+    <li><a href="/admin/">Admin</a></li>
+</ul>
+
+</%def>

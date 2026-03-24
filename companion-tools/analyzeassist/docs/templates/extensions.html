@@ -1,0 +1,40 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">File Extensions</h1>
+
+    <p>The file "extensions.txt" in the application directory contains the rules for associating file extensions to
+        segmentation engines. The default settings are as follows:</p>
+
+    <hr/>
+    <!-- defaultMappings -->
+<pre>
+WordFiles = *.doc;*.rtf
+TextFiles = *.txt
+PptFiles = *.ppt
+HtmlFiles = *.html;*.htm;*.shtml;*.mht
+ExcelFiles = *.xls;*.csv
+XmlFiles = *.xml
+</pre>
+    <hr/>
+
+    <p>You can set which segmentation engines are used for which file extensions by adding, changing, or removing
+        extensions. Extension definitions should be one to a line, and extensions should be in the form
+        "*.<i>extension</i>" (without the quotes). Separate extensions with semicolons (;). </p>
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,314 @@
+## index.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1><a href="../../view/${item["id"]}">${item["name"]}</a></h1>
+
+
+% if records:
+<p class="paginator">
+    % if has_prev:
+        <a href="1" title="Go to first page">&lt;&lt;</a>
+        <a href="${prev_page}" title="Go to previous page">&lt;</a>
+    % endif
+
+    % for num in pages:
+        % if num == page:
+        <span class="this-page" title="Current page">${num}</span>
+        % else:
+        <a href="${num}" title="Go to page ${num}">${num}</a>
+        % endif
+    % endfor
+
+    % if has_next:
+        <a href="${next_page}" title="Go to next page">&gt;</a>
+        <a href="${last_page}" title="Go to last page">&gt;&gt;</a>
+    % endif
+
+    <span style="padding-left:20px;">Page ${page} of ${num_pages}</span>
+</p>
+    <table>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Source</th>
+            <th>Trans</th>
+        </tr>
+    % for num, record in enumerate(records):
+        <tr id="row_${num}">
+            <td rowspan="2">
+                <% item_num =((page-1)*page_size)+(num+1) %>
+                ${item_num}
+            </td>
+            <td id="mainsource_${num}">
+                ${record.source}
+            </td>
+            <td id="maintrans_${num}">
+                ${record.trans}
+            </td>
+        </tr>
+        <tr id="row_b${num}">
+            <td colspan="2">
+                <a href="/records/edit/${item["id"]}/${record.id}" id="edit_${num}">Edit</a>
+                | <a href="/records/delete/${item["id"]}/${record.id}/?next=${current_page}">Delete</a>
+                | <a href="/records/view/${item["id"]}/${record.id}" id="view_${num}">Details &gt;&gt;</a>
+                <div id="item_${num}" style="display:none;">
+		    <table class="props">
+			<tr>
+			    <th>Source</th>
+			    <td id="source_${num}">${record.source}</td>
+			</tr>
+			<tr>
+			    <th>Translation</th>
+			    <td id="trans_${num}">${record.trans}</td>
+			</tr>
+			<tr>
+			    <th>Context</th>
+			    <td id="context_${num}">${record.context}</td>
+			</tr>
+			<tr>
+			    <th>Reliability</th>
+			    <td id="rel_${num}">${record.reliability}</td>
+			</tr>
+			<tr>
+			    <th>Validated</th>
+			    <td id="val_${num}">${record.validated}</td>
+			</tr>
+			<tr>
+			    <th>Ref count</th>
+			    <td id="ref_${num}">${record.ref_count}</td>
+			</tr>
+			<tr>
+			    <th>Date created</th>
+			    <td id="created_${num}">${record.date_created}</td>
+			</tr>
+			<tr>
+			    <th>Created by</th>
+			    <td id="created_by_${num}">${record.created_by}</td>
+			</tr>
+			<tr>
+			    <th>Last modified</th>
+			    <td id="modified_${num}">${record.last_modified}</td>
+			</tr>
+			<tr>
+			    <th>Modified by</th>
+			    <td id="modified_by_${num}">${record.modified_by}</td>
+			</tr>
+		    </table>
+                </div>
+		<form id="edit_form_${num}" style="display:none;">
+		    <fieldset>
+
+		    <table class="form">
+			<tr>
+			    <td><label for="edit_source_${num}">Source</label></td>
+			    <td>
+				<textarea name="edit_source_${num}" id="edit_source_${num}">${record.source}</textarea>
+			    </td>
+			</tr>
+
+			<tr>
+			    <td><label for="edit_trans_${num}">Translation</label></td>
+			    <td>
+				<textarea name="edit_trans_${num}" id="edit_trans_${num}">${record.trans}</textarea>
+			    </td>
+			</tr>
+
+			<tr>
+			    <td><label for="edit_context_${num}">Context</label></td>
+			    <td>
+				<textarea name="edit_context_${num}" id="edit_context_${num}">${record.context}</textarea>
+			    </td>
+			</tr>
+			<tr>
+			    <td><label for="edit_reliability_${num}">Reliability</label></td>
+			    <td>
+				<select name="edit_reliability_${num}" id="edit_reliability_${num}">
+				    % for i in range(10):
+				    <option
+					value="${i}"
+					% if i == record.reliability:
+					selected="selected"
+					% endif
+					>${i}
+				    </option>
+				    % endfor
+				</select>
+			    </td>
+			</tr>
+			<tr>
+			    <td></td>
+			    <td>
+				<input
+				type="checkbox"
+				name="edit_validated_${num}"
+                                id="edit_validated_${num}"
+				% if record.validated:
+				checked="checked"
+				% endif
+				/> Validated<br />
+			    </td>
+			</tr>
+
+		    </table>
+
+		    </fieldset>
+
+		    <br clear="all" />
+		    <div style="float:right;">
+			<input type="submit" value="Edit" id="edit_submit_${num}"/>
+		    </div>
+		</form>
+            </td>
+        </tr>
+    % endfor
+    </table>
+
+<p class="paginator">
+    % if has_prev:
+        <a href="1" title="Go to first page">&lt;&lt;</a>
+        <a href="${prev_page}" title="Go to previous page">&lt;</a>
+    % endif
+
+    % for num in pages:
+        % if num == page:
+        <span class="this-page" title="Current page">${num}</span>
+        % else:
+        <a href="${num}" title="Go to page ${num}">${num}</a>
+        % endif
+    % endfor
+
+    % if has_next:
+        <a href="${next_page}" title="Go to next page">&gt;</a>
+        <a href="${last_page}" title="Go to last page">&gt;&gt;</a>
+    % endif
+</p>
+% else:
+    <p style="color:#888;">No records</p>
+% endif
+
+
+
+<div id="dialog_${item["id"]}" title="Delete ${item["name"]}" style="display:none;">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The memory/glossary and all records in it will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+
+<h2>Actions for ${item["name"]}</h2>
+
+<table border="0">
+    <tr>
+        <td style="border:none;" valign="top">
+            <ul>
+                <li><a href="/${dirname}/download/${item["id"]}">Download</a></li>
+                <li><a href="/${dirname}/view/${item["id"]}/">View</a></li>
+                <li><a href="/${dirname}/search/${item["id"]}">Search</a></li>
+                <li><a href="/${dirname}/replace/${item["id"]}">Replace</a></li>
+            </ul>
+        </td>
+    % if is_admin:
+        <td style="border:none;" valign="top">
+            <ul>
+                <li><a href="/${dirname}/edit/${item["id"]}">Edit properties</a></li>
+                <li><a href="/${dirname}/delete/${item["id"]}" id="delete_${item["id"]}">Delete</a></li>
+            </ul>
+        </td>
+    % endif
+    </tr>
+</table>
+
+<h2>General Actions</h2>
+<ul>
+    <li><a href="/${dirname}/">List Memories</a></li>
+    <li><a href="/${dirname}/add">Create a New Memory</a></li>
+</ul>
+</%def>
+
+<%def name="javascript()">
+<script type="text/javascript">
+$(function() {
+    //set effect from select menu value
+    $("#delete_${item["id"]}").click(function() {
+        $("#dialog_${item["id"]}").show();
+		$("#dialog_${item["id"]}").dialog({
+			bgiframe: true,
+			resizable: true,
+			height:300,
+			modal: true,
+			overlay: {
+				backgroundColor: '#000',
+				opacity: 0.5
+			},
+			buttons: {
+				'Delete': function() {
+					$(this).dialog('close');
+                    window.location.href = "/${dirname}/delete/${item["id"]}" ;
+				},
+				Cancel: function() {
+					$(this).dialog('close');
+                    window.location.href = "${current_page}" ;
+				}
+			}
+		});
+
+        return false ;
+	});
+
+% for num, record in enumerate(records):
+    //set effect from select menu value
+    $("#view_${num}").click(function() {
+        $("#item_${num}").toggle("blind");
+
+        var currentText = $("#view_${num}").text() ;
+        if (currentText == 'Details >>')
+        {$("#view_${num}").html('&lt;&lt; Hide')}
+        else
+        {$("#view_${num}").html('Details &gt;&gt;') }
+
+        return false;
+    });
+
+    //set effect from select menu value
+    $("#edit_${num}").click(function() {
+	$("#edit_form_${num}").toggle("blind");
+	return false;
+    });
+
+    // When the testform is submitted...
+    $("#edit_form_${num}").submit(function() {
+	// post the form values via AJAX...
+	var postdata = {source: $("#edit_source_${num}").val(),
+                        trans: $("#edit_trans_${num}").val(),
+                        context: $("#edit_context_${num}").val(),
+                        reliability: $("#edit_reliability_${num}").val(),
+                        validated: $("#edit_validated_${num}:checked").is(':checked')} ;
+
+	$.post('/records/editinplace/${record.memory_id}/${record.id}', postdata, function(data) {
+		// and set the title with the result
+		$("#message_field").html(data['message']) ;
+        	$("#edit_form_${num}").toggle("blind");
+
+		$("#mainsource_${num}").html(data['source']) ;
+		$("#maintrans_${num}").html(data['trans']) ;
+
+		$("#source_${num}").html(data['source']) ;
+		$("#trans_${num}").html(data['trans']) ;
+		$("#context_${num}").html(data['context']) ;
+		$("#rel_${num}").html(data['reliability']) ;
+		$("#val_${num}").html(data['validated']) ;
+		$("#created_${num}").html(data['date_created']) ;
+		$("#created_by_${num}").html(data['created_by']) ;
+		$("#modified_${num}").html(data['last_modified']) ;
+		$("#modified_by_${num}").html(data['modified_by']) ;
+
+                $("#row_${num}").effect('highlight', {}, 2500) ;
+                $("#row_b${num}").effect('highlight', {}, 2500) ;
+                return false ;
+	       });
+        return false ;
+    });
+
+% endfor
+});</script>
+</%def>

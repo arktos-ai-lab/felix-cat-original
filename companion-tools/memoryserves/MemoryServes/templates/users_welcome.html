@@ -1,0 +1,33 @@
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Welcome to Memory Serves</h1>
+
+<p>Please create a user account. This will be the admin user for Memory Serves,
+and will have permissions to delete memories/glossaries and stop the server.</p>
+
+<form action="submitwelcome" method="post">
+    <table class="form">
+        <tr>
+            <td><label for="name">User name</label></td>
+            <td><input name="name" type="text" id="name" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input name="password" type="password" id="password" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="confirm">Confirm Password</label></td>
+            <td><input name="confirm" type="password" id="confirm" value="" /></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Create Account" />
+</form>
+
+</%def>

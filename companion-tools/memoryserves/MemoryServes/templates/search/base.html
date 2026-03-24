@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+   <title>${title}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/media/style.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="/media/reset-fonts-grids.css">
+    ${self.javascript()}
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner">
+        <div id="menubar">
+            <ul id="nav">
+                <li><a href="/">Home</a> </li>
+                <li><a href="/memories/">Memories</a> </li>
+                <li><a href="/glossaries/">Glossaries</a></li>
+                <li><a href="/globalsearch/">Global Search</a></li>
+                <li><a href="/media/manual/index.html">Help</a></li>
+                % if logged_in:
+                <li><a href="/users/logout/?next=${current_page}">Log Out</a></li>
+                % else:
+                <li><a href="/users/login/?next=${current_page}">Log In</a></li>
+                % endif
+                % if is_admin:
+                <li><a href="/exit/">Quit</a></li>
+                % endif
+            </ul>
+        </div>
+   <h1>Search <a href="/${dirname}/view/${item["id"]}">${item["name"]}</a></h1
+   </div>
+   <div id="bd" role="main">
+	<div class="yui-gc">
+    <div class="yui-u first">
+<form action="/${dirname}/search/${item["id"]}/" method="get">
+    <table class="form">
+        <tr>
+            <td><label for="search">Source</label></td>
+            <td><input class="search" name="search" id="search" type="text" value="${source_query}" /></td>
+            <td><input type="submit" value="Search" /></td>
+        </tr>
+
+    </table>
+
+
+</form>
+
+${msg}
+	    </div>
+    <div class="yui-u">
+	<p>Right-side</p>
+	    </div>
+</div>
+<div class="yui-g">
+% if records:
+
+<hr />
+
+<p>
+    % if has_prev:
+    <a href="/${dirname}/search/${item["id"]}/${prev_page}/?source=${source_query}&amp;trans=${trans_query}">Previous</a>
+    % else:
+    Previous
+    % endif
+    |
+    % if has_next:
+    <a href="/${dirname}/search/${item["id"]}/${next_page}/?source=${source_query}&amp;trans=${trans_query}">Next</a>
+    % else:
+    Next
+    % endif
+</p>
+
+    <h2>Page ${page} of ${num_pages}</h2>
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Source</th>
+            <th>Trans</th>
+            <th>Actions</th>
+        </tr>
+    % for num, record in enumerate(records):
+        <tr>
+            <td>
+                <% item_num =((page-1)*page_size)+(num+1) %>
+                ${item_num}
+            </td>
+            <td>
+                    ${record.source}
+            </td>
+            <td>
+                ${record.trans}
+            </td>
+            <td>
+                <a href="/records/view/${item["id"]}/${record.id}">View</a>
+                | <a href="/records/edit/${item["id"]}/${record.id}">Edit</a>
+                | <a href="/records/delete/${item["id"]}/${record.id}/?next=/${dirname}/search/${item["id"]}/">Delete</a>
+            </td>
+        </tr>
+    % endfor
+    </table>
+<p>
+    % if has_prev:
+    <a href="/${dirname}/search/${item["id"]}/${prev_page}/?source=${source_query}&amp;trans=${trans_query}">Previous</a>
+    % else:
+    Previous
+    % endif
+    |
+    % if has_next:
+    <a href="/${dirname}/search/${item["id"]}/${next_page}/?source=${source_query}&amp;trans=${trans_query}">Next</a>
+    % else:
+    Next
+    % endif
+</p>
+% endif
+</div>
+    <div class="yui-gb">
+        <div class="yui-u first">
+<h2>Actions</h2>
+
+<ul>
+    <li><a href="../../download/${item["id"]}">Download</a></li>
+    % if is_admin:
+    <li><a href="../../edit/${item["id"]}">Edit properties</a></li>
+    % endif
+    <li><a href="../../view/${item["id"]}">View</a></li>
+</ul>
+	        </div>
+        <div class="yui-u">
+<ul>
+    <li><a href="../../.">List</a></li>
+    <li><a href="../../add">Add</a></li>
+</ul>
+	        </div>
+        <div class="yui-u">
+<ul>
+    <li><a href="../../.">List</a></li>
+    <li><a href="../../add">Add</a></li>
+</ul>
+	        </div>
+    </div>
+
+	</div>
+   <div id="ft" role="contentinfo"><p><a href="http://felix-cat.com/tools/memory-serves/" title="Visit the Memory Serves website">Memory Serves</a> version ${version}
+        | Copyright &copy; GITS
+        | <a href="/admin/">Admin</a>
+        </p></div>
+</div>
+</body>
+</html>
+<%def name="javascript()">
+    <script type="text/javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/media/js/jquery-ui-1.8.custom.min.js"></script>
+</%def>

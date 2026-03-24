@@ -1,0 +1,234 @@
+D:\dev\python\MemoryServesExporter\__init__.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:73: [C] Line too long (108/80)
+D:\dev\python\MemoryServesExporter\exportdata.py:91: [C] Line too long (116/80)
+D:\dev\python\MemoryServesExporter\exportdata.py:94: [C] Line too long (81/80)
+D:\dev\python\MemoryServesExporter\exportdata.py:97: [C] Line too long (95/80)
+D:\dev\python\MemoryServesExporter\exportdata.py:108: [C] Line too long (108/80)
+D:\dev\python\MemoryServesExporter\exportdata.py:16: [C, date2str] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:21: [C, make_head_data] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:64: [C, get_url_content] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:105: [C, write_head_node] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:110: [C, write_head] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:115: [C, write_records] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:121: [C, ParsedUrl] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:121: [R, ParsedUrl] Too few public methods (0/2)
+D:\dev\python\MemoryServesExporter\exportdata.py:127: [C, DataSource] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:131: [C, DataSource.get_data] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:135: [C, DataSource.parse_url] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:143: [C, write_memory] Missing docstring
+D:\dev\python\MemoryServesExporter\exportdata.py:155: [C, export] Missing docstring
+D:\dev\python\MemoryServesExporter\main.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\main.py:9: [R, MemoryExporterFrame] Too many public methods (289/20)
+D:\dev\python\MemoryServesExporter\main.py:35: [C, MemoryExporterApp.__init__] Invalid name "useBestVisual" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\main.py:35: [C, MemoryExporterApp.__init__] Invalid name "clearSigInt" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\main.py:37: [C, MemoryExporterApp.__init__] Invalid name "useBestVisual" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\main.py:38: [C, MemoryExporterApp.__init__] Invalid name "clearSigInt" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\main.py:48: [C, MemoryExporterApp.OnInit] Invalid name "OnInit" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\main.py:30: [R, MemoryExporterApp] Too many public methods (66/20)
+D:\dev\python\MemoryServesExporter\monitor_changes.py:37: [W, run_tests] Using the global statement
+D:\dev\python\MemoryServesExporter\monitor_changes.py:45: [C, ChangeWatcher] Missing docstring
+D:\dev\python\MemoryServesExporter\monitor_changes.py:53: [C] Invalid name "event_handler" (should match (([A-Z_][A-Z0-9_]*)|(__.*__))$)
+D:\dev\python\MemoryServesExporter\monitor_changes.py:54: [C] Invalid name "observer" (should match (([A-Z_][A-Z0-9_]*)|(__.*__))$)
+D:\dev\python\MemoryServesExporter\setup.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:45: [C] Line too long (89/80)
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:9: [C, TestDataSource] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:10: [C, TestDataSource.test_parse_url] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:10: [R, TestDataSource.test_parse_url] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:9: [R, TestDataSource] Too many public methods (46/20)
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:18: [C, FakeDataSource] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:25: [C, FakeDataSource.get_data] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:28: [C, FakeDataSource.parse_url] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:31: [C, TestWriteMemory] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:33: [C, TestWriteMemory.setUp] Invalid name "setUp" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:38: [C, TestWriteMemory.tearDown] Invalid name "tearDown" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:41: [C, TestWriteMemory.set_content] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:44: [C, TestWriteMemory.test_write_memory] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_export_data.py:31: [R, TestWriteMemory] Too many public methods (47/20)
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:87: [C] Line too long (81/80)
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:9: [C, TestWriteHeadNode] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:10: [C, TestWriteHeadNode.test_English] Invalid name "test_English" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:10: [C, TestWriteHeadNode.test_English] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:10: [R, TestWriteHeadNode.test_English] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:43: [C, TestWriteHeadNode.test_Japanese] Invalid name "test_Japanese" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:43: [C, TestWriteHeadNode.test_Japanese] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:43: [R, TestWriteHeadNode.test_Japanese] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:9: [R, TestWriteHeadNode] Too many public methods (47/20)
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:77: [C, TestMakeHeadData] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:78: [C, TestMakeHeadData.test_empty_data] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:78: [R, TestMakeHeadData.test_empty_data] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:90: [C, TestMakeHeadData.test_actual] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:90: [R, TestMakeHeadData.test_actual] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:115: [C, TestMakeHeadData.test_japanese] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:115: [R, TestMakeHeadData.test_japanese] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_head.py:77: [R, TestMakeHeadData] Too many public methods (48/20)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:34: [C] Line too long (85/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:38: [C] Line too long (88/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:39: [C] Line too long (112/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:83: [C] Line too long (85/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:87: [C] Line too long (88/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:88: [C] Line too long (112/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:105: [C] Line too long (126/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:106: [C] Line too long (99/80)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:9: [C, TestExportRecord] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:10: [C, TestExportRecord.test_min] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:10: [R, TestExportRecord.test_min] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:30: [C, TestExportRecord.test_japanese] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:64: [C, TestExportRecord.test_japanese] Invalid name "e" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:64: [C, TestExportRecord.test_japanese] Invalid name "a" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:30: [R, TestExportRecord.test_japanese] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:9: [R, TestExportRecord] Too many public methods (47/20)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:69: [C, TestMassageRecData] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:70: [C, TestMassageRecData.test_empty] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:70: [R, TestMassageRecData.test_empty] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:81: [C, TestMassageRecData.test_japanese] Missing docstring
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:101: [C, TestMassageRecData.test_japanese] Invalid name "EXPECTATIONS" (should match [a-z_][a-z0-9_]{2,30}$)
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:81: [R, TestMassageRecData.test_japanese] Method could be a function
+D:\dev\python\MemoryServesExporter\test\test_make_record.py:69: [R, TestMassageRecData] Too many public methods (47/20)
+D:\dev\python\MemoryServesExporter\test\__init__.py:1: [C] Missing docstring
+D:\dev\python\MemoryServesExporter\test\__init__.py:1: [R] Similar lines in 2 files
+==MemoryServesExporter.test.test_make_head:1
+==MemoryServesExporter.test.test_make_record:1
+__author__ = 'Ryan'
+
+import unittest
+import datetime
+from MemoryServesExporter import exportdata
+from cStringIO import StringIO
+
+
+
+Report
+======
+301 statements analysed.
+
+Duplication
+-----------
+
++-------------------------+------+---------+-----------+
+|                         |now   |previous |difference |
++=========================+======+=========+===========+
+|nb duplicated lines      |7     |7        |=          |
++-------------------------+------+---------+-----------+
+|percent duplicated lines |1.157 |1.157    |=          |
++-------------------------+------+---------+-----------+
+
+
+
+Messages by category
+--------------------
+
++-----------+-------+---------+-----------+
+|type       |number |previous |difference |
++===========+=======+=========+===========+
+|convention |70     |70       |=          |
++-----------+-------+---------+-----------+
+|refactor   |20     |20       |=          |
++-----------+-------+---------+-----------+
+|warning    |1      |1        |=          |
++-----------+-------+---------+-----------+
+|error      |0      |0        |=          |
++-----------+-------+---------+-----------+
+
+
+
+% errors / warnings by module
+-----------------------------
+
++-------------------------------------+------+--------+---------+-----------+
+|module                               |error |warning |refactor |convention |
++=====================================+======+========+=========+===========+
+|MemoryServesExporter.monitor_changes |0.00  |100.00  |0.00     |4.29       |
++-------------------------------------+------+--------+---------+-----------+
+
+
+
+Messages
+--------
+
++-----------+------------+
+|message id |occurrences |
++===========+============+
+|C0111      |41          |
++-----------+------------+
+|C0301      |15          |
++-----------+------------+
+|C0103      |14          |
++-----------+------------+
+|R0201      |10          |
++-----------+------------+
+|R0904      |8           |
++-----------+------------+
+|W0603      |1           |
++-----------+------------+
+|R0903      |1           |
++-----------+------------+
+|R0801      |1           |
++-----------+------------+
+
+
+
+Global evaluation
+-----------------
+Your code has been rated at 6.98/10 (previous run: 6.98/10)
+
+External dependencies
+---------------------
+::
+
+    AlignAssist 
+      \-memory_writer (MemoryServesExporter.exportdata)
+    lxml 
+      \-etree (MemoryServesExporter.exportdata)
+    os (MemoryServesExporter.monitor_changes)
+    re (MemoryServesExporter.exportdata)
+    subprocess (MemoryServesExporter.monitor_changes)
+    unittest (MemoryServesExporter.test.test_export_data,MemoryServesExporter.test.test_make_head,MemoryServesExporter.test.test_make_record)
+    urllib2 (MemoryServesExporter.exportdata)
+    watchdog 
+      \-events 
+      | \-FileSystemEventHandler (MemoryServesExporter.monitor_changes)
+      \-observers 
+        \-Observer (MemoryServesExporter.monitor_changes)
+    wx (MemoryServesExporter.main)
+      \-lib 
+        \-sized_controls (MemoryServesExporter.main)
+
+
+
+Statistics by type
+------------------
+
++---------+-------+-----------+-----------+------------+---------+
+|type     |number |old number |difference |%documented |%badname |
++=========+=======+===========+===========+============+=========+
+|module   |9      |9          |=          |22.22       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|class    |12     |12         |=          |16.67       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+|method   |25     |25         |=          |36.00       |20.00    |
++---------+-------+-----------+-----------+------------+---------+
+|function |17     |17         |=          |52.94       |0.00     |
++---------+-------+-----------+-----------+------------+---------+
+
+
+
+Raw metrics
+-----------
+
++----------+-------+------+---------+-----------+
+|type      |number |%     |previous |difference |
++==========+=======+======+=========+===========+
+|code      |388    |69.91 |388      |=          |
++----------+-------+------+---------+-----------+
+|docstring |124    |22.34 |124      |=          |
++----------+-------+------+---------+-----------+
+|comment   |7      |1.26  |7        |=          |
++----------+-------+------+---------+-----------+
+|empty     |36     |6.49  |36       |=          |
++----------+-------+------+---------+-----------+
+
+
+

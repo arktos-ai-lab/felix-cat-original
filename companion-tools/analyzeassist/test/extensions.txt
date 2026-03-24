@@ -1,0 +1,6 @@
+WordFiles = *.doc;*.rtf
+TextFiles = *.txt
+PptFiles = *.ppt
+HtmlFiles = *.html;*.htm;*.shtml;*.mht
+ExcelFiles = *.xls;*.csv
+XmlFiles = *.xml

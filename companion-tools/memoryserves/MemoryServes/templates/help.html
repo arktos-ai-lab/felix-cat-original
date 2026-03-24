@@ -1,0 +1,63 @@
+## help.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memory Serves Help</h1>
+
+<p>This page provides instructions on using Memory Serves with
+<a href="http://felix-cat.com/" title="The Felix website">Felix</a>.</p>
+
+<p>More detailed help can be found in the
+<a href="http://felix-cat.com/media/manuals/memory-serves/">online manual</a>.</p>
+
+<h2>Getting Started</h2>
+
+<p>Since you're reading this help file, I'll assume that you
+managed to install Memory Serves and get it running.
+The next thing you need to do is get some memories/glossaries loaded
+into the server.</p>
+
+<p>You can either upload existing Felix memories, or create new ones.</p>
+
+<ul>
+    <li><a href="/memories/add" title="Upload a Felix memory file">Upload a Felix memory</a></li>
+    <li><a href="/memories/create" title="Create a Felix memory file">Create a new memory</a></li>
+    <li><a href="/glossaries/add" title="Upload a Felix glossary file">Upload a Felix glossary</a></li>
+    <li><a href="/glossaries/create" title="Create a Felix glossary file">Create a new glossary</a></li>
+</ul>
+
+<p>You can also configure the search preferences if you like.</p>
+<p><a href="/preferences/" title="Edit the search preferences">Edit search preferences</a></p>
+
+<h2>Connecting from Felix</h2>
+
+<p>Copy the connection string of the desired memory/glossary, then from the Felix <strong>File</strong> menu,
+select <strong>Connect...</strong>, and paste in that connection string. The server memory/glossary should
+behave just like a local one, except that you don't need to save it (the server takes care of that
+automatically).</p>
+
+<h2>Searching and Browsing Memories/Glossaries</h2>
+
+<p>From the <a href="/memories/">Memories</a> or <a href="/glossaries/">Glossaries</a> page, click on
+the <strong>Browse</strong> or <strong>Search</strong> link for the desired memory/glossary. These
+links are also on the details page for each memory/glossary.</p>
+
+<p>From the browse list and search results, you can edit and delete records, and view details for records.</p>
+
+<h2>I Forgot My Admin Password!</h2>
+
+<p>If you forget your admin password, you can clear the users from the database and create a new admin
+account using the <strong>Clear Users</strong> utility. On Windows XP, this utility will be found
+from the <strong>Start</strong> menu, under
+<strong>All Programs</strong> &gt;&gt;
+<strong>Memory Serves</strong> &gt;&gt;
+<strong>Clear Users</strong>.</p>
+
+<p>The next time you start Memory Serves, it will take you to the welcome page, and you'll be able to
+create a new admin account. Don't forget it this time!</p>
+
+
+</%def>

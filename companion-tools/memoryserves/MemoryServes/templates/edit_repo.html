@@ -1,0 +1,50 @@
+## edit.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+<h1>Edit ${typename}</h1>
+
+    <form action="../submitedit/${item["id"]}" melabelod="post">
+    <fieldset>
+
+    <table class="form">
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td><input type="text" name="name" id="name" value="${item["name"]}" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="creator">Created by</label></td>
+            <td><input type="text" name="creator" id="creator" value="${item["creator"]}" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="source_language">Source language</label></td>
+            <td><input type="text" name="source_language" id="source_language" value="${item["source_language"]}" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="target_language">Target language</label></td>
+            <td><input type="text" name="target_language" id="target_language" value="${item["target_language"]}" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="client">Client</label></td>
+            <td><input type="text" name="client" id="client" value="${item["client"]}" /></td>
+        </tr>
+
+
+        <tr>
+            <td><label for="notes">Notes</label></td>
+            <td><textarea name="notes" id="notes">${item["notes"]}</textarea></td>
+        </tr>
+    </table>
+
+    </fieldset>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+</%def>

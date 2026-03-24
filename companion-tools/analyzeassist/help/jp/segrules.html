@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta content="history" name="save">
+    <meta name="GENERATOR" content="Innovasys HelpStudio Lite (http://www.innovasys.com)">
+    <title>Segmentation Rules
+    </title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/helpstudio.css">
+    <script src="script/helpstudio.js" type="text/javascript"></script>
+
+
+    <xml>
+        <MSHelp:RLTitle Title="Segmentation Rules
+"/>
+        <MSHelp:Attr Name="DocSet" Value="AnalyzeAssist Help"/>
+        <MSHelp:Attr Name="TopicType" Value="kbRef"/>
+    </xml>
+
+</head>
+<body id="hsbody" topmargin="0" onLoad="hsBodyLoad()" style="display: none;">
+<input type="hidden" id="userDataCache" class="userDataStyle" NAME="userDataCache">
+</input>
+<input type="hidden" id="hiddenScrollOffset" NAME="hiddenScrollOffset">
+</input>
+<div id="pagetop">
+    <table width="100%" id="pagetoptable1">
+        <tr id="pagetoptable1row1">
+            <td align="left">
+					<span id="projecttitle">
+						AnalyzeAssist Help
+					</span>
+            </td>
+            <td align="right">
+					<span id="feedbacklink">
+						<a href="mailto:software@ginstrom.com?subject=Documentation Feedback: Segmentation Rules
+">Send comments</a> on this topic.</td>
+            </span>
+            </td>
+        </tr>
+        <tr id="pagetoptable1row2">
+            <td align="left" colspan="2">
+					<span id="pagetitle">
+						Segmentation Rules
+
+					</span>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<div id="pagebody" valign="bottom">
+    <div id="mainbody">
+
+        <p>To configure the segmentation rules from AnalyzeAssist, use the <b>Tools</b> &gt;&gt; <b>Preferences</b> menu
+            (recommended).
+
+        <p>
+            You can also directly edit the "segrules.txt" file in the application directory.
+            This file contains the rules for segmenting text. The defaults are as follwos:</p>
+
+        <hr/>
+        <!-- defaultSegrules -->
+<pre>
+StopChars = .!?。．！？
+SegControlChars = true
+IgnoreNumberSegs = true
+</pre>
+        <hr/>
+
+        <p>The meanings of each setting are as follows.</p>
+
+        <dl>
+            <dt>StopChars</dt>
+            <dd>These are the characters that mark the end of a segment (typically a sentence).</dd>
+
+            <dt>SegControlChars</dt>
+            <dd>Whether control characters (such as tabs) mark the end of a segment. Set to false if segments contain
+                control characters. true/false
+            </dd>
+
+            <dt>IgnoreNumberSegs</dt>
+            <dd>Ignore segments consisting entirely of numbers. true/false</dd>
+
+        </dl>
+
+        <a name="SeeAlsoBookmark"></a>
+
+        <h1 class=heading>See Also</h1>
+
+        <div id=SeeAlsoSection class=section>
+            <p>
+                <a href="extensions.html">Configuring File Extensions</a>
+            </p>
+        </div>
+
+
+    </div>
+    <div id="pagefooter">
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+        <hr size=1>
+        <p>Copyright &copy; Ginstrom IT Solututions (GITS)</p>
+    </div>
+</div>
+</body>
+</html>

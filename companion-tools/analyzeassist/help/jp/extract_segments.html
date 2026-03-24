@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
+<head>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+    <meta content="history" name="save">
+    <meta name="GENERATOR" content="Innovasys HelpStudio Lite (http://www.innovasys.com)">
+    <title>The extract_segments Utility
+    </title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/helpstudio.css">
+    <script src="script/helpstudio.js" type="text/javascript"></script>
+
+
+    <xml>
+        <MSHelp:RLTitle Title="The extract_segments Utility
+"/>
+        <MSHelp:Attr Name="DocSet" Value="AnalyzeAssist Help"/>
+        <MSHelp:Attr Name="TopicType" Value="kbRef"/>
+    </xml>
+
+</head>
+<body id="hsbody" topmargin="0" onLoad="hsBodyLoad()" style="display: none;">
+<input type="hidden" id="userDataCache" class="userDataStyle" NAME="userDataCache">
+</input>
+<input type="hidden" id="hiddenScrollOffset" NAME="hiddenScrollOffset">
+</input>
+<div id="pagetop">
+    <table width="100%" id="pagetoptable1">
+        <tr id="pagetoptable1row1">
+            <td align="left">
+					<span id="projecttitle">
+						AnalyzeAssist Help
+					</span>
+            </td>
+            <td align="right">
+					<span id="feedbacklink">
+						<a href="mailto:software@ginstrom.com?subject=Documentation Feedback: The extract_segments Utility
+">Send comments</a> on this topic.</td>
+            </span>
+            </td>
+        </tr>
+        <tr id="pagetoptable1row2">
+            <td align="left" colspan="2">
+					<span id="pagetitle">
+						The extract_segments Utility
+
+					</span>
+            </td>
+        </tr>
+
+    </table>
+</div>
+<div id="pagebody" valign="bottom">
+    <div id="mainbody">
+
+        <p>The <code>extract_segments</code> command-line utility extracts the segments from the specified file(s), and
+            writes them to separate files, one segment to a line. The output file name is the name of the input file,
+            with a suffix (".segs.txt" by default) added. The syntax is as follows:</p>
+
+        <p><code>extract_segments.exe [-h] [-e extension] -f filename [filename ...]</code></p>
+
+        <dl>
+            <dt>-e</dt>
+            <dd>The extension to add to output files (optional).</dd>
+            <dt>-f</dt>
+            <dd>One or more files to process</dd>
+            <dt>-h</dt>
+            <dd>Show help for this command</dd>
+        </dl>
+
+        <p> Example:</p>
+
+        <p><code>extract_segments -e .segs.txt -f wordfile.doc excelfile.xls pptfile.ppt</code></p>
+
+        <p>Write the segments in "wordfile.doc", "excelfile.xls", and "pptfile.ppt" to the text files
+            "wordfile.doc.segs.txt", "excelfile.xls.segs.txt", and "pptfile.ppt.segs.txt",
+            one segment to a line.</p>
+
+        <h1 class=heading>Navigation</h1>
+
+        <div id=SeeAlsoSection class=section>
+            <p>
+                <a href="index.html">Contents</a>
+            </p>
+
+            <p>
+                <a href="utilities.html">Command-line Utilities</a>
+            </p>
+        </div>
+
+
+    </div>
+    <div id="pagefooter">
+        <p>&nbsp;</p>
+
+        <p>&nbsp;</p>
+        <hr size=1>
+        <p>Copyright &copy; Ginstrom IT Solututions (GITS)</p>
+    </div>
+</div>
+</body>
+</html>

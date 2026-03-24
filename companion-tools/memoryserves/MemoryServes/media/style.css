@@ -1,0 +1,302 @@
+* {
+margin: 0;
+}
+
+html, body {
+     background-color: #fff;
+     color: #333;
+     font-family: Calibri Sans-Serif;
+     padding: 0px;
+     margin: 0px;
+     min-height: 500px;
+     font-size: 100%;
+}
+
+#wrapper {
+     min-height: 100%;
+    margin: 0 auto;
+}
+
+.container
+{
+    margin: 3px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+p
+{
+    margin-bottom: 10px;
+}
+ul
+{
+    margin-bottom: 10px;
+}
+div.content
+{
+    padding: 10px;
+    padding-top: 30px;
+    margin: 10px;
+}
+/* menu bar */
+#menubar { border-top: 5px solid #000; }
+
+#nav {
+	float: right;
+	margin: 0;
+	padding: 0;
+    font-size: 80%;
+	}
+
+#nav li {
+	list-style-type: none;
+	display: inline;
+	float: left;
+	}
+
+#nav li a {
+	padding-top: 3px;
+	display: block;
+	margin: 0 15px;
+	}
+
+/* headers */
+h1, h2, h3
+{
+    font-family: Cambria, sans-serif ;
+    letter-spacing: 3px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px dotted #030;
+}
+
+hr
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* footer */
+#footer, .blank {
+height: 2em;
+}
+#footer
+{
+    background-color: #000;
+}
+#footer p
+{
+    margin-left: 50px;
+    color: white;
+}
+
+/* footer links */
+#footer a {
+     color: white;
+     text-decoration: none;
+}
+
+#footer a:hover {
+     color: #3b3;
+     text-decoration: underline;
+}
+
+/* links */
+a {
+     text-decoration: none;
+     color: #090;
+}
+
+a:hover {
+     text-decoration: underline;
+}
+
+/* forms */
+input.search {
+     border: 1px solid #A1A1A1;
+     padding: 5px;
+     width: 20em;
+}
+/* forms */
+input {
+     border: 1px solid #A1A1A1;
+     padding: 5px;
+}
+
+label
+{
+    width: 200px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+
+.form {
+     margin: 5px 5px 5px 5px;
+}
+
+/* messaegs */
+div.success
+{
+    color: green;
+    border: 2px solid #090;
+    background-color: #efe;
+    padding: 10px;
+    margin: 20px;
+}
+div.error
+{
+    background-color: #FFFFDD;
+    border: 1px solid #e00;
+    color: #e00;
+    padding: 10px;
+    margin: 20px;
+}
+div.nomatches
+{
+     margin: 10px; color:red; font-style:italic;
+}
+div.yesmatches
+{
+     margin: 10px; color:green; font-weight:bold;
+}
+
+
+/* Tables */
+table
+{
+  border-collapse: collapse;
+}
+
+table.props th
+{
+    text-align: left;
+    font-weight: bold;
+}
+
+table caption
+{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+th
+{
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #060;
+}
+td
+{
+    padding: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: 1px solid #060;
+}
+
+table.grid th
+{
+    padding: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 1px solid #060;
+    text-align: left ;
+    width: 100px;
+}
+th.headline
+{
+    text-align: left ;
+    background-color: #CCC ;
+}
+table.grid td
+{
+    padding: 3px;
+    padding-left: 15px;
+    padding-right: 6px;
+    border: 1px solid #060;
+}
+
+/* log messages */
+tr.info td
+{
+    background: #CF9;
+}
+tr.warn td
+{
+    background: #FF9;
+}
+tr.error td
+{
+    background: #F99;
+    font-weight: bold;
+}
+
+
+table.form td
+{
+    padding-left: 3px;
+    padding-right: 3px;
+    border: none
+}
+
+textarea
+{
+    width: 30em;
+    height: 10em;
+    margin-bottom: 10px;
+}
+
+pre{margin-bottom: 20px;}
+
+/* pagination */
+.paginator {
+font-size:11px;
+padding-top:10px;
+padding-bottom:10px;
+line-height:22px;
+border-top:1px solid #ddd;
+margin:0;
+}
+
+.paginator a:link,.paginator a:visited {
+border:solid 1px #ccc;
+background:#FFF;
+text-decoration:none;
+padding:2px 6px;
+}
+
+.paginator a.showall {
+border:none !important;
+padding:0 !important;
+}
+
+.paginator a.showall:hover {
+color:#036 !important;
+background:transparent !important;
+}
+
+.paginator .end {
+margin-right:6px;
+border-width:2px !important;
+}
+
+.paginator .this-page {
+font-weight:700;
+font-size:13px;
+vertical-align:top;
+padding:2px 6px;
+}
+
+.paginator a:hover {
+color:#FFF;
+background:#5b80b2;
+border-color:#036;
+}
+
+.highlight {
+background:#F99;
+font-weight:700;
+}

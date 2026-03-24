@@ -1,0 +1,27 @@
+## log_error.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memory Serves Error Log</h1>
+
+<div style="border: 1px dashed; border-color: #3F3; background-color: #EFE;">
+% if errlog:
+<pre>
+${errlog}
+</pre>
+% else:
+<span style="color:#333; padding:20px;">The error log is empty</span>
+% endif
+</div>
+
+
+<p><a href="/log/">Log</a> |
+    Server Error Log |
+    <a href="/log/serverlog">Server Access Log</a>
+</p>
+
+<p><a href="/admin/">Admin</a></p>
+</%def>

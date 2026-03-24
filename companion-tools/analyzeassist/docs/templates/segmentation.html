@@ -1,0 +1,64 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">Segmentation</h1>
+
+    <p>AnalyzeAssist can segment* the following file types. It will skip numbers by default;
+        see <a href="segrules.html">Segmentation Rules</a> for details on how to change the segmentation rules.
+        See <a href="extensions.html">Configuring File Extensions</a> for instructions on changing file associations for
+        AnalyzeAssist.</p>
+
+    <p>* Segment: Separate a file into segments, which are translation units generally equivalent to sentences</p>
+
+    <dl>
+        <dt>Text Files</dt>
+        <dd>Supported encodings include:
+            <ul>
+                <li>UTF-8</li>
+                <li>UTF-16</li>
+                <li>UTF-16 (big-endian)</li>
+            </ul>
+            Although AnalyzeAssist can detect SJIS and other multibyte encodings, for best results it is recommended
+            that you make sure your text files are in one of the Unicode encodings above, with a byte-order mark (BOM).
+            (Programs like Notepad will automatically add a BOM when saving a text file in Unicode format.)
+        </dd>
+
+        <dt>Microsoft Word Files</dt>
+        <dd>AnalyzeAssist will also extract text from text boxes.
+        </dd>
+
+        <dt>Microsoft Excel Files</dt>
+        <dd>AnalyzeAssist will also extract text from shapes on each worksheet.
+        </dd>
+
+        <dt>Microsoft PowerPoint Files</dt>
+        <dd>AnalyzeAssist will also extract text from MS Word/Excel objects embedded in PowerPoint slides, although
+            results for textboxes/shapes further embedded in these objects are not guaranteed.
+        </dd>
+
+        <dt>HTML Files</dt>
+        <dd>Extracts the text displayed in the browser, including the document title, and "alt" and "title" tags in
+            links/images.
+        </dd>
+
+        <dt>XML Files</dt>
+        <dd>Extracts text data from the xml nodes.
+        </dd>
+    </dl>
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

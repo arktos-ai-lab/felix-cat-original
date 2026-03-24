@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Search and Replace &mdash; Memory Serves 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Memory Serves 2.0 documentation" href="index.html" />
+    <link rel="next" title="Downloading" href="downloading.html" />
+    <link rel="prev" title="Connecting from Felix" href="connecting-from-felix.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="downloading.html" title="Downloading"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="connecting-from-felix.html" title="Connecting from Felix"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="search-and-replace">
+<h1>Search and Replace<a class="headerlink" href="#search-and-replace" title="Permalink to this headline">¶</a></h1>
+<p>As of version 1.3, Memory Serves has a new search and replace interface. You can use it to conduct fine-grained searches, replace within search results, and perform batch replace operations for all transaltion records (entries) matching
+your criteria.</p>
+<div class="section" id="search">
+<span id="index-0"></span><h2>Search<a class="headerlink" href="#search" title="Permalink to this headline">¶</a></h2>
+<p>To perform a search on a memory or glossary, click on the &#8220;Search&#8221; link next to that memory/glossary on the index page, or on its detailed view page.</p>
+<p>Searching in Memory Serves works using the concept of &#8220;query filters&#8221; (see <a class="reference internal" href="#query-filters"><em>Query Filters</em></a>, below for details). Enter a filter and click <strong>Search</strong>; all matching records will appear, in a paginated view. You can keep adding filters until you have refined your search to the desired entries.</p>
+<p>The current query filters are shown in a list to the right of the search box. Click on the &#8220;Remove&#8221; link next to a filter to delete it. If your query filters yield no matching entries, try deleting a filter to expand your search.</p>
+<p>Once you&#8217;ve refined your search to your satisfaction, you can click the &#8220;Replace in Results&#8221; link to perform replacements. For example, after finding all the translations created by the user &#8220;Ryan Ginstrom,&#8221; you can perform a replace operation to change all the &#8220;validated&#8221; flags for those translations to &#8220;true.&#8221;</p>
+</div>
+<div class="section" id="replace">
+<span id="index-1"></span><h2>Replace<a class="headerlink" href="#replace" title="Permalink to this headline">¶</a></h2>
+<p>There are three types of replace operations:</p>
+<ul class="simple">
+<li><a class="reference internal" href="#find"><em>Find</em></a>: Find the next translation record matching your criteria</li>
+<li><a class="reference internal" href="#id2"><em>Replace</em></a>: Peform the replacement on the current match, and search for the next one.</li>
+<li><a class="reference internal" href="#replace-all"><em>Replace All</em></a>: Perform the replacement on all records matching your criteria.</li>
+</ul>
+<p>Each translation record (entry) consists of several &#8220;fields&#8221;: the source text, the translation, context, the date the translation was created, and so on. By default, replacements are made for matching source and translation fields. You can also specify which field you want to perform the replacement in.</p>
+<p>Enter a term to search for that term anywhere in a source or translation. Use the tags below in the format <tt class="docutils literal"><span class="pre">tag:term</span></tt> to make fine-grained searches.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="84%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tag</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>source:</td>
+<td>Replace in the source field</td>
+</tr>
+<tr class="row-odd"><td>trans:</td>
+<td>Replace in the translation field</td>
+</tr>
+<tr class="row-even"><td>context:</td>
+<td>Replace in the context field</td>
+</tr>
+<tr class="row-odd"><td>created-by:</td>
+<td>Replace the creator field</td>
+</tr>
+<tr class="row-even"><td>created:</td>
+<td>Replace the date created</td>
+</tr>
+<tr class="row-odd"><td>modified-by:</td>
+<td>Replace the modified-by field</td>
+</tr>
+<tr class="row-even"><td>modified:</td>
+<td>Replace the date modified</td>
+</tr>
+<tr class="row-odd"><td>reliability:</td>
+<td>Replace the reliability</td>
+</tr>
+<tr class="row-even"><td>validated:</td>
+<td>Mark the record as validated (&#8220;true&#8221;) or not validated (&#8220;false&#8221;)</td>
+</tr>
+<tr class="row-odd"><td>refcount:</td>
+<td>Change the reference count of the record</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>Replace &#8216;aaa&#8217; in source and translation segments with &#8216;bbb&#8217;:</p>
+<div class="highlight-python"><pre>From       aaa
+To         bbb</pre>
+</div>
+<p>Replace &#8216;xxx&#8217; in source segments with &#8216;yyy&#8217;:</p>
+<div class="highlight-python"><pre>From       source:xxx
+To         yyy</pre>
+</div>
+<p>Follow a tag by an asterisk (*) to replace the entire field. For example, to change the &#8220;created-by&#8221; field of all matching records to &#8220;Ryan&#8221;:</p>
+<div class="highlight-python"><pre>From       created-by:*
+To         Ryan</pre>
+</div>
+<p>Change the record&#8217;s date created to 2009-10-01:</p>
+<div class="highlight-python"><pre>From       created:
+To         2009-10-01</pre>
+</div>
+<p>Make the reliability of the record 5:</p>
+<div class="highlight-python"><pre>From       reliability:
+To         5</pre>
+</div>
+<p>Validate the record:</p>
+<div class="highlight-python"><pre>From       validated:
+To         true</pre>
+</div>
+</div>
+<div class="section" id="find">
+<span id="id1"></span><h3>Find<a class="headerlink" href="#find" title="Permalink to this headline">¶</a></h3>
+<p>Enter a value in the &#8220;From&#8221; field and the &#8220;To&#8221; field, and click <strong>Find</strong>. Memory Serves will find the next record matching your criteria, and display a table with two columns: &#8220;Found&#8221; and &#8220;Will become.&#8221; The second column is how the entry will look after you perform the replace. Click <strong>Replace</strong> to replace this entry and find the next matching one, or <strong>Replace All</strong> to replace all matching entries.</p>
+</div>
+<div class="section" id="id2">
+<span id="id3"></span><h3>Replace<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>After you click <strong>Find</strong> and there is a matching translation entry, click <strong>Replace</strong> to perform the specified replacement on this entry, and find the next one. You can continue doing this until there are no more matching entries. Click <strong>Find</strong> to skip the replacement for this entry, and find the next matching one.</p>
+<p>This feature is handy when you want to confirm each replacement before performing it.</p>
+</div>
+<div class="section" id="replace-all">
+<span id="id4"></span><h3>Replace All<a class="headerlink" href="#replace-all" title="Permalink to this headline">¶</a></h3>
+<p>When you click <strong>Replace All</strong>, the specified replacement is performed on all translation entries matching your criteria. This is handy when you want to perform a lot of replacements at once.</p>
+</div>
+</div>
+<div class="section" id="query-filters">
+<span id="id5"></span><h2>Query Filters<a class="headerlink" href="#query-filters" title="Permalink to this headline">¶</a></h2>
+<p>Searching in Memory Serves uses the concept of &#8220;filters.&#8221; A filter is a query that restricts the set of records that are shown. Examples of query filters are &#8220;all translations with the word &#8216;spam&#8217; in the source,&#8221; &#8220;all translations with a reliability score of 5 or higher,&#8221; or &#8220;all translations created after 5 March 2009.&#8221;</p>
+<p>Enter a term to search for that term anywhere in a source or translation. Use the tags below in the format <tt class="docutils literal"><span class="pre">tag:term</span></tt> to make fine-grained searches.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tag</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>source:</td>
+<td>Search in source field</td>
+</tr>
+<tr class="row-odd"><td>trans:</td>
+<td>Search in translation field</td>
+</tr>
+<tr class="row-even"><td>context:</td>
+<td>Search in context field</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Created</td>
+</tr>
+<tr class="row-even"><td>created-by:</td>
+<td>Search in creator field</td>
+</tr>
+<tr class="row-odd"><td>created-before:</td>
+<td>Search for records created before date (YYYY-MM-DD format)</td>
+</tr>
+<tr class="row-even"><td>created-after:</td>
+<td>Search for records created after date (YYYY-MM-DD format)</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Modified</td>
+</tr>
+<tr class="row-even"><td>modified-by:</td>
+<td>Search in modifier field</td>
+</tr>
+<tr class="row-odd"><td>modified-before:</td>
+<td>Search for records modified before date (YYYY-MM-DD format)</td>
+</tr>
+<tr class="row-even"><td>modified-after:</td>
+<td>Search for records modified after date (YYYY-MM-DD format)</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Reliability</td>
+</tr>
+<tr class="row-even"><td>reliability:</td>
+<td>Search for records with the specified reliability</td>
+</tr>
+<tr class="row-odd"><td>reliability-gt:</td>
+<td>Search for records with greater than the specified reliability</td>
+</tr>
+<tr class="row-even"><td>reliability-gte:</td>
+<td>Search for records with at least the specified reliability</td>
+</tr>
+<tr class="row-odd"><td>reliability-lt:</td>
+<td>Search for records with less than the specified reliability</td>
+</tr>
+<tr class="row-even"><td>reliability-lte:</td>
+<td>Search for records with no more than than the specified reliability</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Validated</td>
+</tr>
+<tr class="row-even"><td>validated:</td>
+<td>Search for records that are validated (&#8220;true&#8221;) or not validated (&#8220;false&#8221;)</td>
+</tr>
+<tr class="row-odd"><td colspan="2">Reference Count</td>
+</tr>
+<tr class="row-even"><td>refcount:</td>
+<td>Search for records with the specified reference count</td>
+</tr>
+<tr class="row-odd"><td>refcount-gt:</td>
+<td>Search for records with greater than the specified reference count</td>
+</tr>
+<tr class="row-even"><td>refcount-gte:</td>
+<td>Search for records with at least the specified reference count</td>
+</tr>
+<tr class="row-odd"><td>refcount-lt:</td>
+<td>Search for records with less than the specified reference count</td>
+</tr>
+<tr class="row-even"><td>refcount-lte:</td>
+<td>Search for records with no more than than the specified reference count</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id6">
+<h3>Examples<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<dl class="docutils">
+<dt>Search for records created before 2009-10-01</dt>
+<dd><tt class="docutils literal"><span class="pre">created-before:2009-10-01</span></tt></dd>
+<dt>Search for records with a reliability of at least 5</dt>
+<dd><tt class="docutils literal"><span class="pre">reliability-gte:5</span></tt></dd>
+<dt>Search for records that have been validated</dt>
+<dd><tt class="docutils literal"><span class="pre">validated:true</span></tt></dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Search and Replace</a><ul>
+<li><a class="reference internal" href="#search">Search</a></li>
+<li><a class="reference internal" href="#replace">Replace</a><ul>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#find">Find</a></li>
+<li><a class="reference internal" href="#id2">Replace</a></li>
+<li><a class="reference internal" href="#replace-all">Replace All</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#query-filters">Query Filters</a><ul>
+<li><a class="reference internal" href="#id6">Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="connecting-from-felix.html"
+                        title="previous chapter">Connecting from Felix</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="downloading.html"
+                        title="next chapter">Downloading</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="downloading.html" title="Downloading"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="connecting-from-felix.html" title="Connecting from Felix"
+             >previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+        <div class="footer">Documentation for <a href="/">Memory Serves</a></div>
+
+  </body>
+</html>

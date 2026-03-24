@@ -1,0 +1,17 @@
+(dp1
+S'analyze numbers'
+p2
+I00
+sS'fuzzy options'
+p3
+(dp4
+S'directory'
+p5
+NsS'extract'
+p6
+I00
+sS'extension'
+p7
+S'fuzzy'
+p8
+ss.

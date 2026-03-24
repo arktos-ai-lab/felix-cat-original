@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>"Global Replace :: Memory Serves</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/media/reset-fonts-grids.css">
+    <link rel="stylesheet" type="text/css" href="/media/style.css" media="screen"/>
+<link type="text/css" href="/media/css/jquery-ui-1.8.custom.css" rel="Stylesheet" />
+<script type="text/javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/media/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript">
+$(function()
+  {$("#replacefrom").focus();}
+  );
+</script>
+<script type="text/javascript">
+$(function() {
+    //set effect from select menu value
+    $("#showhelp").click(function() {
+        $("#help_details").toggle("blind");
+
+        var currentText = $("#showhelp").text() ;
+        if (currentText == 'Replace Help >>')
+        {$("#showhelp").html('&lt;&lt; Hide Help')}
+        else
+        {$("#showhelp").html('Replace Help &gt;&gt;') }
+
+        return false;
+    });
+});
+/* find */
+$(function() {
+    //set effect from select menu value
+    $("#replace-find").click(function() {
+
+        document.forms[0].action = "/globalsearch/replace_find/" ;
+        document.forms[0].submit()
+
+        return true;
+    });
+});
+
+/* submit (does find) */
+$(function() {
+    $("#searchform").submit(function() {
+        document.forms[0].action = "/globalsearch/replace_find/" ;
+        return true;
+    });
+});
+
+
+/* replace */
+$(function() {
+    //set effect from select menu value
+    $("#replace-replace").click(function() {
+
+        document.forms[0].action = "/globalsearch/replace_replace/" ;
+        document.forms[0].submit()
+
+        return true;
+    });
+});
+/* replace all */
+$(function() {
+    //set effect from select menu value
+    $("#replace-all").click(function() {
+
+        document.forms[0].action = "/globalsearch/replace_all/" ;
+        document.forms[0].submit()
+
+        return true;
+    });
+});
+</script>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner">
+        <div id="menubar">
+            <ul id="nav">
+                <li><a href="/">Home</a> </li>
+                <li><a href="/memories/">Memories</a> </li>
+                <li><a href="/glossaries/">Glossaries</a></li>
+                <li><a href="/globalsearch/">Global Search</a></li>
+                <li><a href="/media/manual/index.html">Help</a></li>
+                % if logged_in:
+                <li><a href="/users/logout/?next=${current_page}">Log Out</a></li>
+                % else:
+                <li><a href="/users/login/?next=${current_page}">Log In</a></li>
+                % endif
+                % if is_admin:
+                <li><a href="/exit/">Quit</a></li>
+                % endif
+            </ul>
+        </div>
+   <h1>Global Replace</a></h1>
+   </div>
+   <div id="bd" role="main">
+    <div class="yui-gc">
+
+    <div class="yui-u first">
+    <form action="/globalsearch/replace/" method="get" id="searchform">
+        <table class="form">
+            <tr>
+                <td><label for="replacefrom">From:</label></td>
+                <td><input class="search" name="replacefrom" id="replacefrom" type="text" value="${replacefrom}" /></td>
+            </tr>
+            <tr>
+                <td><label for="replaceto">To:</label></td>
+                <td><input class="search" name="replaceto" id="replaceto" type="text" value="${replaceto}" /></td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td>
+                    <p>
+                     <a href="#" id="replace-find" class="ui-state-default ui-corner-all">&nbsp;Find&nbsp;</a>
+% if found:
+                     <a href="#" id="replace-replace" class="ui-state-default ui-corner-all">&nbsp;Replace&nbsp;</a>
+% endif
+                     <a href="#" id="replace-all" class="ui-state-default ui-corner-all">&nbsp;Replace All&nbsp;</a>
+
+                     <input type="submit" value="submit" style="display:none;" />
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <input type="hidden" name="nth_item" value="${nth_item}" />
+% for query in queryfilters:
+<input type="hidden" name="queryfilters" value="${query["term"]}" />
+% endfor
+    </form>
+
+<div>
+% if queryfilters:
+<a href="/globalsearch/">New Global Search</a> |
+% endif
+<a href="/globalsearch/search-help/" id="showhelp">Replace Help &gt;&gt;</a>
+</div>
+<div id="help_details" style="display:none;">
+<p>Enter a term to search for that term anywhere in a source or translation. Use the tags below in the format <em>tag:term</em> to make fine-grained searches.</p>
+
+<table style="border:none;">
+<tr>
+    <td>source:</td>
+    <td>Replace in the source field</td>
+</tr>
+<tr>
+    <td>trans:</td>
+    <td>Replace in the translation field</td>
+</tr>
+<tr>
+    <td>context:</td>
+    <td>Replace in the context field</td>
+</tr>
+<tr>
+    <td>created-by:</td>
+    <td>Replace the creator field</td>
+</tr>
+<tr>
+    <td>created:</td>
+    <td>Replace the date created</td>
+</tr>
+<tr>
+    <td>modified-by:</td>
+    <td>Replace the modified-by field</td>
+</tr>
+<tr>
+    <td>modified:</td>
+    <td>Replace the date modified</td>
+</tr>
+<tr>
+    <td>reliability:</td>
+    <td>Replace the reliability</td>
+</tr>
+<tr>
+    <td>validated:</td>
+    <td>Mark the record as validated ("true") or not validated ("false")</td>
+</tr>
+<tr>
+    <td>refcount:</td>
+    <td>Change the reference count of the record</td>
+</tr>
+</table>
+
+<h3>Regular Expressions</h3>
+
+<p>You can also use the "regex:" tag to specify a regular expression in your search.
+If you use another tag, the "regex:" tag should come after it (e.g. "source:regex:\d\d\d-\d\d\d\d").</p>
+
+<h3>Examples</h3>
+
+<p>Replace 'aaa' in source and translation segments with 'bbb'</p>
+<table border="0">
+    <tr><td>From</td><td>aaa</td></tr>
+    <tr><td>To</td><td>bbb</td></tr>
+</table>
+
+<p>Replace 'xxx' in source segments with 'yyy'</p>
+<table border="0">
+    <tr><td>From</td><td>source:xxx</td></tr>
+    <tr><td>To</td><td>yyy</td></tr>
+</table>
+
+<p>Follow a tag by an asterisk (*) to replace the entire field. For example, to change the "created-by" field of all matching records to "Ryan":</p>
+<table border="0">
+    <tr><td>From</td><td>created-by:*</td></tr>
+    <tr><td>To</td><td>Ryan</td></tr>
+</table>
+
+<p>Change the record's date created to 2009-10-01</p>
+<table border="0">
+    <tr><td>From</td><td>created:</td></tr>
+    <tr><td>To</td><td>2009-10-01</td></tr>
+</table>
+
+<p>Make the reliability of the record 5</p>
+<table border="0">
+    <tr><td>From</td><td>reliability:</td></tr>
+    <tr><td>To</td><td>5</td></tr>
+</table>
+
+<p>Validate the record</p>
+<table border="0">
+    <tr><td>From</td><td>validated:</td></tr>
+    <tr><td>To</td><td>true</td></tr>
+</table>
+</div>
+
+    ${msg}
+    </div>
+
+    <div class="yui-u">
+    % if queryfilters:
+        <h3>Query Filters</h3>
+        % for query in queryfilters:
+        <p>${query["term"]} (<a href="/globalsearch/replace/${query["removelink"]}">Remove</a>)</p>
+        % endfor
+    % else:
+    <p style="color:#666;">No filters.</p>
+    % endif
+	    </div>
+</div>
+<div class="yui-g">
+% if found:
+    <table class="props">
+        <tr>
+            <th>&nbsp;</th>
+            <th>Now</th>
+            <th>Will Become</th>
+        </tr>
+        <tr>
+            <th>Source</th>
+            <td>${found.source}</td>
+            <td>${result.source}</td>
+        </tr>
+        <tr>
+            <th>Translation</th>
+            <td>${found.trans}</td>
+            <td>${result.trans}</td>
+        </tr>
+        <tr>
+            <th>Context</th>
+            <td>${found.context}</td>
+            <td>${result.context}</td>
+        </tr>
+        <tr>
+            <th>Reliability</th>
+            <td>${found.reliability}</td>
+            <td>${result.reliability}</td>
+        </tr>
+        <tr>
+            <th>Validated</th>
+            <td>${found.validated}</td>
+            <td>${result.validated}</td>
+        </tr>
+        <tr>
+            <th>Ref count</th>
+            <td>${found.ref_count}</td>
+            <td>${result.ref_count}</td>
+        </tr>
+        <tr>
+            <th>Date created</th>
+            <td>${found.date_created}</td>
+            <td>${result.date_created}</td>
+        </tr>
+        <tr>
+            <th>Created by</th>
+            <td>${found.created_by}</td>
+            <td>${result.created_by}</td>
+        </tr>
+        <tr>
+            <th>Last modified</th>
+            <td>${found.last_modified}</td>
+            <td>${result.last_modified}</td>
+        </tr>
+        <tr>
+            <th>Modified by</th>
+            <td>${found.modified_by}</td>
+            <td>${result.modified_by}</td>
+        </tr>
+    </table>
+% else:
+    <p>&nbsp;</p>
+% endif
+</div>
+    <div class="yui-gb">
+        <div class="yui-u first">
+<h2>Search Actions</h2>
+<ul>
+    <li><a href="/globalsearch/">New Search</a></li>
+    <li><a href="/globalsearch/replace/">Replace</a></li>
+</ul>
+		</div>
+	<div class="yui-u">
+<h2>Other Actions</h2>
+<ul>
+    <li><a href="/memories/">List Memories</a></li>
+    <li><a href="/glossaries/">List Glossaries</a></li>
+</ul>
+	        </div>
+    </div>
+
+	</div>
+   <div id="footer" role="contentinfo"><p><a href="http://felix-cat.com/tools/memory-serves/" title="Visit the Memory Serves website">Memory Serves</a> version ${version}
+        | Copyright &copy; GITS
+        | <a href="/admin/">Admin</a>
+        </p></div>
+</div>
+</body>
+</html>

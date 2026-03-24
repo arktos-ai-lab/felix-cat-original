@@ -1,0 +1,6 @@
+syntax: glob
+.idea/*
+htmlcov/*
+.coverage
+*.pyc
+docs/_build/*

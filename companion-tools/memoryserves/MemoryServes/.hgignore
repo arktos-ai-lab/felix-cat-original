@@ -1,0 +1,42 @@
+syntax: glob
+
+# Ignore pyc and temp files
+*.pyc
+*~
+
+# Ignore build files
+MemoryServes/*
+Setup/*
+build/*
+dist/*
+docs/build/*
+media/manual/*
+
+
+# We build these files on the fly.
+modules/*
+
+# Ignore data files
+data/*
+
+# Ignore log files
+*.log
+log.txt
+
+# Ignore built exe's
+*.exe
+
+# Ignore coverage and performance files
+.coverage
+htmlcov/*
+cover/*
+stats.dat
+
+
+msversion.txt
+gramdma address.txt
+
+# Ignore IDE files
+.idea/*
+
+venv/*

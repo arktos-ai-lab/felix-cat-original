@@ -1,0 +1,79 @@
+## preferences.html
+<%inherit file="../base.html" />
+
+<%def name="content()">
+
+    <h1>Edit Record</h1>
+
+    <form action="/records/submitedit/${mem_id}/${record.id}" method="post">
+        <fieldset>
+
+        <table class="form">
+            <tr>
+                <td><label for="source">Source</label></td>
+                <td>
+                    <textarea name="source" id="source">${record.source}</textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="trans">Translation</label></td>
+                <td>
+                    <textarea name="trans" id="trans">${record.trans}</textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="context">Context</label></td>
+                <td>
+                    <textarea name="context" id="context">${record.context}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="reliability">Reliability</label></td>
+                <td>
+                    <select name="reliability" id="reliability">
+                        % for i in range(10):
+                        <option
+                            value="${i}"
+                            % if i == record.reliability:
+                            selected="selected"
+                            % endif
+                            >${i}
+                        </option>
+                        % endfor
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input
+                    type="checkbox"
+                    name="validated"
+                    % if record.validated:
+                    checked="checked"
+                    % endif
+                    /> Validated<br />
+                </td>
+            </tr>
+
+        </table>
+
+        </fieldset>
+
+        <br clear="all" />
+        <div style="float:right;">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+<div style="margin-top: 20px">
+<ul>
+    <li><a href="/${dirname}/view/${mem_id}">View ${memtype}</a></li>
+    <li><a href="/records/delete/${record.id}/?next=/${dirname}/browse/${mem_id}/${page}">Delete Record</a></li>
+</ul>
+</div>
+
+
+</%def>

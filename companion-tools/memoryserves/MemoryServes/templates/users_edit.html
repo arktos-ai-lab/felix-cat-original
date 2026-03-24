@@ -1,0 +1,61 @@
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Edit Account Info</h1>
+
+
+<form action="/users/submitedit/${edituser["id"]}" method="post">
+    <table class="form">
+        <tr>
+            <td><label for="name">User name</label></td>
+            <td><input name="name" type="text" id="name" value="${edituser["name"]}" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="role">Role</label></td>
+            <td><select name="role">
+                % if edituser["role"] == "guest":
+                    <option value="guest" selected="true">Guest</option>
+                % else:
+                    <option value="guest">Guest</option>
+                % endif
+                % if edituser["role"] == "user":
+                    <option value="user" selected="true">User</option>
+                % else:
+                    <option value="user">User</option>
+                % endif
+                % if edituser["role"] == "admin":
+                    <option value="admin" selected="true">Admin</option>
+                % else:
+                    <option value="admin">Admin</option>
+                % endif
+                </select>
+            </td>
+        </tr>
+
+        <tr><td colspan="2">Only enter password information if you want to change the password</td></tr>
+
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input name="password" type="password" id="password" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="confirm">Confirm Password</label></td>
+            <td><input name="confirm" type="password" id="confirm" value="" /></td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Submit" />
+</form>
+
+<h2>Actions</h2>
+<ul>
+    <li><a href="/users/">List Users</a></li>
+</ul>
+
+
+</%def>

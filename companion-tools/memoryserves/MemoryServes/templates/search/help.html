@@ -1,0 +1,112 @@
+## help.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Search Help</h1>
+
+<p>Enter a term to search for that term anywhere in a source or translation. Use the tags below in the format <em>tag:term</em> to make fine-grained searches.</p>
+
+<table style="border:none;">
+<tr><th colspan="2">Text Fields</th></tr>
+<tr>
+    <td>source:</td>
+    <td>Search in source field</td>
+</tr>
+<tr>
+    <td>trans:</td>
+    <td>Search in translation field</td>
+</tr>
+<tr>
+    <td>context:</td>
+    <td>Search in context field</td>
+</tr>
+<tr><th colspan="2">Created</th></tr>
+<tr>
+    <td>created-by:</td>
+    <td>Search in creator field</td>
+</tr>
+<tr>
+    <td>created-before:</td>
+    <td>Search for records created before date (YYYY-MM-DD format)</td>
+</tr>
+<tr>
+    <td>created-after:</td>
+    <td>Search for records created after date (YYYY-MM-DD format)</td>
+</tr>
+<tr><th colspan="2">Modified</th></tr>
+<tr>
+    <td>modified-by:</td>
+    <td>Search in modifier field</td>
+</tr>
+<tr>
+    <td>modified-before:</td>
+    <td>Search for records modified before date (YYYY-MM-DD format)</td>
+</tr>
+<tr>
+    <td>modified-after:</td>
+    <td>Search for records modified after date (YYYY-MM-DD format)</td>
+</tr>
+<tr><th colspan="2">Reliability</th></tr>
+<tr>
+    <td>reliability:</td>
+    <td>Search for records with the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-gt:</td>
+    <td>Search for records with greater than the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-gte:</td>
+    <td>Search for records with at least the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-lt:</td>
+    <td>Search for records with less than the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-lte:</td>
+    <td>Search for records with no more than than the specified reliability</td>
+</tr>
+<tr><th colspan="2">Validated</th></tr>
+<tr>
+    <td>validated:</td>
+    <td>Search for records that are validated ("true") or not validated ("false")</td>
+</tr>
+
+<tr><th colspan="2">Reference Count</th></tr>
+<tr>
+    <td>refcount:</td>
+    <td>Search for records with the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-gt:</td>
+    <td>Search for records with greater than the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-gte:</td>
+    <td>Search for records with at least the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-lt:</td>
+    <td>Search for records with less than the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-lte:</td>
+    <td>Search for records with no more than than the specified reference count</td>
+</tr>
+</table>
+
+<h3>Examples</h3>
+
+<p>Search for records created before 2009-10-01</p>
+<pre>created-before:2009-10-01</pre>
+
+<p>Search for records with a reliability of at least 5</p>
+<pre>reliability-gte:5</pre>
+
+<p>Search for records that have been validated</p>
+<pre>validated:true</pre>
+</%def>

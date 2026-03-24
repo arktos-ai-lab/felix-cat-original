@@ -1,0 +1,17 @@
+syntax: glob
+.idea/
+*.pyc
+*.dll
+*.pyd
+venv
+MemoryServes/docs/build
+MemoryServes/.coverage
+MemoryServes/dist
+MemoryServes/modules
+*.DLL
+MemoryServes/Setup
+*.exe
+MemoryServes/MemoryServes/library.zip
+MemoryServes/data/data.pk
+MemoryServes/data/prefs.pickle
+MemoryServes/htmlcov/

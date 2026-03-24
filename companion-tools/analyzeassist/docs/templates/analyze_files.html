@@ -1,0 +1,23 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">analyze_files</h1>
+
+    <p>This utility analyzes documents against your translation memories.</p>
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

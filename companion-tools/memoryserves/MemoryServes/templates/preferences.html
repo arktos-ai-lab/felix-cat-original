@@ -1,0 +1,74 @@
+## preferences.html
+<%inherit file="base.html" />
+
+
+<%def name="content()">
+
+${msg}
+
+    <h1>Edit Preferences</h1>
+
+    <form action="../editprefs/" method="post">
+        <fieldset>
+            <input
+                   type="checkbox"
+                   name="one_trans_per_source"
+                   % if one_trans_per_source:
+                   checked="checked"
+                   % endif
+                   /><label for="one_trans_per_source">One translation per source (requires restart of Memory Serves)</label><br />
+        </fieldset>
+
+        <fieldset>
+            <h2>Normalize</h2>
+            <input
+                   type="checkbox"
+                   name="case"
+                   % if normalize_case:
+                   checked="checked"
+                   % endif
+                   /> <label for="case">Case</label><br />
+
+            <input
+                   type="checkbox"
+                   name="width"
+                   % if normalize_width:
+                   checked="checked"
+                   % endif
+                   /> <label for="width">Width</label><br />
+
+
+            <input
+                   type="checkbox"
+                   name="hira"
+                   % if normalize_hira:
+                   checked="checked"
+                   % endif
+                   /> <label for="hira">Hiragana/Katakana</label> <br />
+
+        </fieldset>
+        <fieldset>
+            <h2>System Tray</h2>
+
+            <input
+                   type="checkbox"
+                   name="systray"
+                   % if show_systray_icon:
+                   checked="checked"
+                   % endif
+                   /><label for="systray">Show system tray icon (requires restart of Memory Serves)</label><br />
+        </fieldset>
+        <fieldset>
+            <h2>Data Folder</h2>
+
+            <p>
+                <label for="name">Data Folder</label>
+                <input type="text" name="data_folder" id="data_folder" value="${data_folder}" style="width:400px;"/>
+            </p>
+        </fieldset>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+</%def>

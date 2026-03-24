@@ -1,0 +1,57 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+
+    <p>The <code>extract_segments</code> command-line utility extracts the segments from the specified file(s), and
+        writes them to separate files, one segment to a line. The output file name is the name of the input file, with a
+        suffix (".segs.txt" by default) added. The syntax is as follows:</p>
+
+    <p><code>extract_segments.exe [-h] [-e extension] -f filename [filename ...]</code></p>
+
+    <dl>
+        <dt>-e</dt>
+        <dd>The extension to add to output files (optional).</dd>
+        <dt>-f</dt>
+        <dd>One or more files to process</dd>
+        <dt>-h</dt>
+        <dd>Show help for this command</dd>
+    </dl>
+
+    <p> Example:</p>
+
+    <p><code>extract_segments -e .segs.txt -f wordfile.doc excelfile.xls pptfile.ppt</code></p>
+
+    <p>Write the segments in "wordfile.doc", "excelfile.xls", and "pptfile.ppt" to the text files
+        "wordfile.doc.segs.txt", "excelfile.xls.segs.txt", and "pptfile.ppt.segs.txt",
+        one segment to a line.</p>
+
+    <h1 class=heading>Navigation</h1>
+
+    <div id=SeeAlsoSection class=section>
+        <p>
+            <a href="index.html">Contents</a>
+        </p>
+
+        <p>
+            <a href="utilities.html">Command-line Utilities</a>
+        </p>
+    </div>
+
+
+</div>
+<div id="pagefooter">
+    <p>&nbsp;</p>
+
+    <p>&nbsp;</p>
+    <hr size=1>
+    <p>Copyright &copy; Ginstrom IT Solututions (GITS)</p>
+</div>
+</div>
+</body>
+</html>

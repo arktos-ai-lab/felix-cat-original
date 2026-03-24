@@ -1,0 +1,41 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">Utilities</h1>
+
+    <p>A number of command-line utilities are included so that you can use AnalyzeAssist more flexibly within your own
+        workflow.</p>
+
+    <p>The included command-line utilities are as follows.</p>
+
+    <ul>
+        <li><a href="dump-text.html">Dump Text</a><br/>
+            A GUI program to extract the segments from a list of documents and writes them to text files
+        </li>
+
+        <li><a href="extract_segments.html">extract_segments</a><br/>
+            A command-line program to extract segments from a list of documents and writes them to text files
+        </li>
+
+        <li><a href="analyze_files.html">analyze_files</a><br/>
+            A command-line program to analyze the specified documents against the specified memories
+        </li>
+
+    </ul>
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

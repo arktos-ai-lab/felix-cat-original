@@ -1,0 +1,10 @@
+(lp1
+I3
+aF4.5
+aS'spam'
+p2
+a(dp3
+g2
+S'eggs'
+p4
+sa.

@@ -1,0 +1,25 @@
+## add.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+    <h1>Upload and Merge with '${item["name"]}'</h1>
+    <% id = item["id"] %>
+
+    <form action="/${dirname}/submitmerge/${id}" method="post" enctype="multipart/form-data" style="width:600px; margin-top:20px;">
+        <fieldset style="width:100%%;">
+        <label for="file_input">filename:</label>
+        <input
+            id="file_input"
+            type="file"
+            name="memory_file" />
+        <input type="submit" value="Upload" id="submit" />
+    </fieldset>
+    </form>
+
+    ${msg}
+
+    <hr />
+
+    <p><a href="/${dirname}/">List all ${dirname}</a></p>
+</%def>

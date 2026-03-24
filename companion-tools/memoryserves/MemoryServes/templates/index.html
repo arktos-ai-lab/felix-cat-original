@@ -1,0 +1,56 @@
+## index.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memory Serves</h1>
+
+<p>Memory Serves is now running at <a href="http://${connection}/">http://${connection}/</a>.
+% if "127.0.0.1" in connection:
+Are you sure this computer is connected to the network?
+% endif
+</p>
+
+<p>To connect to a TM or glossary, go to the
+<a href="/memories/" title="View and manage memories">Memories</a> or
+<a href="/glossaries/" title="View and manage glossaries">Glossaries</a> page,
+and copy the connection string of the desired TM/glossary. You can also
+<a href="/memories/add">upload a memory</a> or <a href="/glossaries/add">glossary</a>.</p>
+
+<p>For more instructions, see the <a href="/help/">built-in help page</a>
+or the <a href="http://felix-cat.com/media/manuals/memory-serves/">online manual</a>.</p>
+
+<table class="props">
+    <caption>Preferences</caption>
+    <tr>
+        <th>Normalize case:</th>
+        <td>${normalize_case}</td>
+    </tr>
+    <tr>
+        <th>Normalize hiragana/katakana:</th>
+        <td>${normalize_hira}</td>
+    </tr>
+    <tr>
+        <th>Normalize width:</th>
+        <td>${normalize_width}</td>
+    </tr>
+    <tr>
+        <th>Show system tray icon:</th>
+        <td>${show_systray_icon}</td>
+    </tr>
+</table>
+
+<h2>Actions</h2>
+<ul>
+    <li><a href="/memories/" title="View and manage memories">Memories</a></li>
+    <li><a href="/glossaries/" title="View and manage glossaries">Glossaries</a></li>
+% if is_admin:
+    <li><a href="/admin/" title="Manage Memory Serves">Admin</a></li>
+    <li><a href="/preferences/" title="Set preferences">Preferences</a></li>
+    <li><a href="/users/" title="View and manage users">Users</a></li>
+% endif
+</ul>
+
+</%def>

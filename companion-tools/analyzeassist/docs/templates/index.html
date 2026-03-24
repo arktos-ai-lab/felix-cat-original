@@ -1,0 +1,28 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Free tool for Windows to analyze translations against translation memories :: Analyze Assist Help{% endblock %}
+
+{% block description %}Help for Analyze Assist: a free tool to analyze translations against TMs. It supports Felix and TMX memory formats, and documents in Word, Excel, PowerPoint, HTML, XML, text, and more formats.{% endblock %}
+{% block keywords %}analysis, translation memory, TM, memory, Felix, TMX, words, characters, kanji, asian, double-byte, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">Table of Contents</h1>
+
+    {% for item in index %}
+
+    <h2><a href="{{item.filename}}">{{item.title}}</a></h2>
+
+    <p>{{item.description}}</p>
+
+    {% endfor %}
+
+</div>
+<div id="r">
+    <div class="block">
+        <a href="http://ginstrom.com/AnalyzeAssist/" title="Main page for Analyze Assist">Go to main page for Analyze
+            Assist</a>
+    </div>
+
+</div>
+{% endblock %}

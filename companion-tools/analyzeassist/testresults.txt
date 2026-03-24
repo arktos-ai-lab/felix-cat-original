@@ -1,0 +1,426 @@
+<class 'wx.html.HtmlWindow'>
+license file already existed in providers: (<function brokerResFileName at 0x01EEA9F0>, ())
+EOFError: 
+Language changed to English
+Language changed to English
+Language changed to Japanese
+Language changed to English
+<class 'AnalyzeAssist.fakewidgets.SizedDialog'>
+<class 'AnalyzeAssist.fakewidgets.HtmlWindow'>
+<class 'AnalyzeAssist.view.page.StartPage'>
+
+==============================
+| analyze_files version 1.0
+==============================
+
+Analyzing files: ['/test/a.txt']
+Memories: ['/test/a.xml']
+Writing results to analysis.txt
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+...Done!
+
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+Performing wordcounts on files...
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+...Done!
+Language changed to English
+docstats [warning] No matching range for score -10
+docstats [warning] No matching range for score 50
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 140, in parseMatchRanges
+    lines = text.splitlines()
+AttributeError: 'int' object has no attribute 'splitlines'
+
+Bad match range exception
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 141, in parseMatchRanges
+    return [ parseMatchRange(line) for line in lines if line.strip() ]
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 120, in parseMatchRange
+    raise e
+BadMatchRangeException:             90-80: Value on left not lower than value on right
+
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 140, in parseMatchRanges
+    lines = text.splitlines()
+AttributeError: 'list' object has no attribute 'splitlines'
+
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 140, in parseMatchRanges
+    lines = text.splitlines()
+AttributeError: 'NoneType' object has no attribute 'splitlines'
+
+Setting match ranges: 42
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 203, in setMatchRanges
+    assert isinstance(match_ranges, tuple) or isinstance(match_ranges, list)
+AssertionError
+
+Setting match ranges: [(100, 100), (95, 99), (85, 94), (0, 84)]
+Setting match ranges: []
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 196, in setMatchRanges
+    assert match_ranges, "text must not be empty"
+AssertionError: text must not be empty
+
+Setting match ranges: [(100, 100), (95, 99), (85, 94), (0, 84)]
+Setting match ranges: None
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 196, in setMatchRanges
+    assert match_ranges, "text must not be empty"
+AssertionError: text must not be empty
+
+Setting match ranges: [(100, 100), (95, 99), (85, 94), (0, 84)]
+Bad match range exception
+%s creates exception as expected: ('100%-95 ', '100%-95 : Value on left not lower than value on right')
+Traceback (most recent call last):
+  File "C:\Documents and Settings\Ryan Ginstrom\workspace\AnalyzeAssist\docstats.py", line 89, in getLeftAndRight
+    left, right = [x for x in line.split('-')]
+ValueError: too many values to unpack
+
+%s creates exception as expected: ('95-99-88 ', 'Syntax error in line [95-99-88 ]')
+%s creates exception as expected: ('50 to 84 ', '50 to 84 : Invalid syntax')
+Bad match range exception
+%s creates exception as expected: ('100-99', '100-99: Value on left not lower than value on right')
+%s creates exception as expected: ('', ': Invalid syntax')
+%s creates exception as expected: ('1a0', "Error parsing line [1a0] (invalid literal for int() with base 10: '1a0')")
+
+==============================
+Running tests on extract_segments
+==============================
+extract_segments version 1.0
+==============================
+
+Segmenting file: c:/test/a.txt
+...Done!
+**********
+Testing file c:/test/withnums.txt
+Segmenting file: c:/test/withnums.txt
+...tests passed!
+**********
+
+**********
+Testing file c:/test/sentences.txt
+Segmenting file: c:/test/sentences.txt
+...tests passed!
+**********
+
+**********
+Testing file c:/test/japaneseutf8.txt
+Segmenting file: c:/test/japaneseutf8.txt
+...tests passed!
+**********
+
+**********
+Testing file c:/test/japanese.txt
+Segmenting file: c:/test/japanese.txt
+...tests passed!
+**********
+
+...tests complete!
+==============================
+
+Fuzzy options changed: None
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+[(u'Results for /test/a_text.xml', <AnalyzeAssist.docstats.DocStats object at 0x02CFAEB0>)]
+Fuzzy options changed: {'directory': None, 'extension': None}
+Fuzzy options changed: None
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+No status bar
+Destroying progress dialog
+Fuzzy options changed: {'directory': None, 'extension': None}
+[(<function create_and_show_analysis_wizard at 0x01E8E870>, ())]
+[(<function write_analyze_numbers at 0x01E0A0F0>, ())]
+{'analyze numbers': False, 'fuzzy options': {'directory': None, 'extension': None}}
+Analyze numbers setting: False
+Analyze numbers setting: True
+Analyze numbers setting: False
+Fuzzy options changed: test_extension
+Fuzzy options changed: test_extension_ii
+Fuzzy options changed: {'directory': None, 'extension': None}
+Selected directory: c:\Test
+
+Testing report page
+Found codepage: 932
+Best score is: 100
+Best score is: 7
+Best score is: 100
+Best score is: 100
+Best score is: 100
+Best score is: 10
+Failed to load tmx memory 'c:\\foo.tmx'
+Details: [Errno 2] No such file or directory: 'c:\\foo.tmx'
+日本語
+Failed to get text from shape: FakeShape instance has no attribute 'TextFrame'

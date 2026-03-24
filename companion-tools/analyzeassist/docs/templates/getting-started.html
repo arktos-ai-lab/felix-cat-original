@@ -1,0 +1,35 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Get Started using Analyze Assist{% endblock %}
+
+{% block description %}Get started using Analyze Assist. Information about Analyze Assist, and instructions for downloading, installing, and running Analyze Assist.{% endblock %}
+{% block keywords %}introduction, analysis, TM, translation, memory, Felix, TMX, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+{% block content %}
+<div id="l">
+    <h1 class="title">Getting Started</h1>
+
+    <p>Analyze Assist is XXX.</p>
+
+    <h2>Download and Install</h2>
+
+    <p>Download the latest version of Analyze Assist from the
+        <a href="http://ginstrom.com/AnalyzeAssist/">Analyze Assist Website</a>.
+        Once you've downloaded the installer, double click on it and follow
+        the on-screen instructions to install the program.
+
+    <h2>Starting Analyze Assist</h2>
+
+    <p>If you selected to add a shortcut to the desktop, there'll be an "Analyze Assist" icon on your desktop. Double
+        click on the icon to start the program.</p>
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

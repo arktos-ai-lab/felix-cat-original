@@ -1,0 +1,393 @@
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Configure User Permissions</h1>
+
+<form action="/users/submitpermissions/" method="post">
+    <div>
+    <table class="grid">
+        <tr>
+            <th>&nbsp;</th>
+            <th>Admin</th>
+            <th>User</th>
+            <th>Guest</th>
+            <th>Anon</th>
+        </tr>
+        <!-- TMs and Glossaries -->
+        <tr> <!-- Create -->
+            <th>Site Admin</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.site_admin"
+                       % if privs["admin"]["site_admin"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.site_admin"
+                       % if privs["user"]["site_admin"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.site_admin"
+                       % if privs["guest"]["site_admin"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.site_admin"
+                       % if privs["anon"]["site_admin"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr>
+            <th colspan="5" class="headline">TMs and Glossaries</th>
+        </tr>
+        <tr> <!-- Create -->
+            <th>Create</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.tm_create"
+                       % if privs["admin"]["tm_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.tm_create"
+                       % if privs["user"]["tm_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.tm_create"
+                       % if privs["guest"]["tm_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.tm_create"
+                       % if privs["anon"]["tm_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr> <!-- Read -->
+            <th>Read</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.tm_read"
+                       % if privs["admin"]["tm_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.tm_read"
+                       % if privs["user"]["tm_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.tm_read"
+                       % if privs["guest"]["tm_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.tm_read"
+                       % if privs["anon"]["tm_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr> <!-- Update -->
+            <th>Update</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.tm_update"
+                       % if privs["admin"]["tm_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.tm_update"
+                       % if privs["user"]["tm_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.tm_update"
+                       % if privs["guest"]["tm_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.tm_update"
+                       % if privs["anon"]["tm_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr> <!-- Delete -->
+            <th>Delete</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.tm_delete"
+                       % if privs["admin"]["tm_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.tm_delete"
+                       % if privs["user"]["tm_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.tm_delete"
+                       % if privs["guest"]["tm_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.tm_delete"
+                       % if privs["anon"]["tm_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <!-- Records -->
+        <tr>
+            <th colspan="5" class="headline">Records</th>
+        </tr>
+        <tr>
+            <th>Create</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.rec_create"
+                       % if privs["admin"]["rec_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.rec_create"
+                       % if privs["user"]["rec_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.rec_create"
+                       % if privs["guest"]["rec_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.rec_create"
+                       % if privs["anon"]["rec_create"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr> <!-- Read -->
+            <th>Read</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.rec_read"
+                       % if privs["admin"]["rec_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.rec_read"
+                       % if privs["user"]["rec_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.rec_read"
+                       % if privs["guest"]["rec_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.rec_read"
+                       % if privs["anon"]["rec_read"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr> <!-- Update -->
+            <th>Update</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.rec_update"
+                       % if privs["admin"]["rec_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.rec_update"
+                       % if privs["user"]["rec_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.rec_update"
+                       % if privs["guest"]["rec_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.rec_update"
+                       % if privs["anon"]["rec_update"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+        <tr> <!-- Delete -->
+            <th>Delete</th>
+            <td>
+                <input
+                       type="checkbox"
+                       name="admin.rec_delete"
+                       % if privs["admin"]["rec_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="user.rec_delete"
+                       % if privs["user"]["rec_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="guest.rec_delete"
+                       % if privs["guest"]["rec_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+            <td>
+                <input
+                       type="checkbox"
+                       name="anon.rec_delete"
+                       % if privs["anon"]["rec_delete"]:
+                       checked="checked"
+                       % endif
+                       />
+            </td>
+        </tr>
+    </table>
+
+    <div style="padding-top: 10px;">
+        <input type="submit" value="Submit" />
+    </div>
+    </div>
+</form>
+
+<h2>Actions</h2>
+<ul>
+    <li><a href="/users/">List Users</a></li>
+    <li><a href="/admin/">Admin</a></li>
+</ul>
+
+
+</%def>

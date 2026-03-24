@@ -1,0 +1,60 @@
+What translation file formats does Analyze Assist support?
+------------------------------------
+Analyze Assist supports the following file formats:
+
+* Microsoft Word (.doc, .docx, .rtf)
+* Microsoft Excel (.xls, .xlsx, .csv)
+* Microsoft PowerPoint (.ppt, .pptx)
+* HTML (.html, .shtml, .htm)
+* XML (.xml)
+* Text (.txt)
+* PDF (.pdf)
+=====================================
+
+What translation memory formats does Analyze Assist support?
+-------------------------------------------------------------
+Analyze Assist supports translation memories (TMs) in <a href="http://felix-cat.com/">Felix</a> and TMX formats.
+=====================================
+
+Does it analyze text in text boxes?
+------------------------------------
+
+Yes, Analyze Assist can analyze text boxes in MS Word, and text
+boxes and some other shapes (such as graphs) in MS Excel.
+
+=====================================
+
+What do you mean by Asian characters?
+------------------------------------
+
+Asian characters are Kanji, Hiragana, Katakana (full and half-width),
+full-width numbers and punctuation, and Chinese and Korean characters.
+This is often abbreviated as "CJK."
+
+
+=====================================
+Can it analyze text in an MS Excel sheet embedded in a PowerPoint slide?
+------------------------------------
+
+Yes.
+
+====================================
+Does it analyze text in PowerPoint notes?
+------------------------------------
+
+Yes.
+
+=====================================
+Can it analyze text in PDF files?
+------------------------------------
+
+Yes, but with a caveat: only if the PDF file contains text and isn't
+protected. Analyze Assist can't analyze the text if the file contains
+scanned images, or if it's protected.
+
+=====================================
+Can I analyze text in Web pages?
+------------------------------------
+
+Yes. From the Analysis Wizard  (see <a href="analysiswizard.html">Analysis Wizard</a>),
+click <strong>Add URL...</strong>, and enter the URL of the Web page.

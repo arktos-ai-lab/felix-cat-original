@@ -1,0 +1,58 @@
+/* CSS Document */
+
+body {
+    margin: 1em;
+    font-family: "Trebuchet MS", Arial, Verdana;
+    color: #555555;
+    text-align: left;
+    background-color: #FFFFFF;
+}
+
+a {
+    color: #4D87CE;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2a65ad;
+}
+
+li {
+    line-height: 20px;
+    text-align: left;
+}
+
+.success {
+    font-size: 12px !important;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border: 1px solid green;
+    color: green;
+    background: #ffc url(img/icon_success.gif) 5px .3em no-repeat;
+    background-position: middle left;
+}
+
+.error_message {
+    font-size: 12px !important;
+    display: block;
+    padding: 4px 5px 4px 25px;
+    margin: 0 0 3px 0;
+    border: 1px solid red;
+    color: red;
+    background: #ffc url(img/icon_error.gif) 5px .3em no-repeat;
+    background-position: middle left;
+}
+
+h1 {
+    font-family: "Century Gothic", "Trebuchet MS", "Arial Narrow", Arial, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    border-bottom: 1px solid #10458d;
+    color: #10458d;
+}
+
+p {
+    font-size: 15px;
+}

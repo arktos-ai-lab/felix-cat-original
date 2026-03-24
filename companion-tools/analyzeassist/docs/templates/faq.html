@@ -1,0 +1,24 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Frequently Asked Questions for Analyze Assist{% endblock %}
+
+{% block description %}Frequently Asked Questions about Analyze Assist. Get the answers to common questions or problems.{% endblock %}
+{% block keywords %}faq, wordcount, count, words, characters, kanji, asian, double-byte, Word, Excel, PowerPoint, HTML, XML, free, manual, help, documentation{% endblock %}
+
+
+{% block content %}
+<div id="l">
+    <h1 class="title">Analyze Assist FAQ</h1>
+
+    {{faq}}
+
+</div>
+<div id="r">
+    <ul>
+        <li><a href="index.html">Contents</a></li>
+        {% for item in index %}
+        <li><a href="{{item.filename}}">{{item.title}}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

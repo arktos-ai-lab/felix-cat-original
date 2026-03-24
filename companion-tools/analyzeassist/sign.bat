@@ -1,0 +1,1 @@
+"C:\Program Files\Microsoft Platform SDK\Bin\signtool" sign /i UTN-USERFirst-Object /d "Free program to analyze source files against TMs" /du http://ginstrom.com/AnalyzeAssist/ /t http://timestamp.comodoca.com/authenticode %1

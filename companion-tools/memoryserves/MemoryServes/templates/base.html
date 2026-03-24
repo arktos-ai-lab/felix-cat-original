@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>${title}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/media/style.css" media="screen"/>
+
+    <link type="text/css" href="/media/css/jquery-ui-1.8.custom.css" rel="Stylesheet" />
+    <script type="text/javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="/media/js/jquery-ui-1.8.custom.min.js"></script>
+    ${self.javascript()}
+</head>
+<body>
+    <div id="wrapper">
+        <div id="menubar">
+            <ul id="nav">
+                <li><a href="/">Home</a> </li>
+                <li><a href="/memories/">Memories</a> </li>
+                <li><a href="/glossaries/">Glossaries</a></li>
+                <li><a href="/globalsearch/">Global Search</a></li>
+                <li><a href="/media/manual/index.html">Help</a></li>
+                % if logged_in:
+                <li><a href="/users/logout/?next=${current_page}">Log Out</a></li>
+                % else:
+                <li><a href="/users/login/?next=${current_page}">Log In</a></li>
+                % endif
+                % if is_admin:
+                <li><a href="/exit/">Quit</a></li>
+                % endif
+            </ul>
+        </div>
+
+        <div class="container">
+            <div class="content">
+                ${self.content()}
+            </div>
+        </div>
+
+        <br />
+    </div>
+
+    <div id="footer">
+        <p><a href="http://felix-cat.com/tools/memory-serves/" title="Visit the Memory Serves website">Memory Serves</a> version ${version}
+        | Copyright &copy; GITS
+        | <a href="/admin/">Admin</a>
+        </p>
+    </div>
+</body>
+</html>
+<%def name="javascript()">
+</%def>

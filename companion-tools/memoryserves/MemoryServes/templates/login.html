@@ -1,0 +1,28 @@
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Log in to Memory Serves</h1>
+
+<form action="/users/submitlogin" method="post">
+    <input type="hidden" name="next" value="${next}" />
+    <table class="form">
+        <tr>
+            <td><label for="name">User name</label></td>
+            <td><input name="name" type="text" id="name" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="password">Password</label></td>
+            <td><input name="password" type="password" id="password" value="" /></td>
+        </tr>
+
+    </table>
+
+    <input type="submit" value="Log In" />
+</form>
+
+
+</%def>

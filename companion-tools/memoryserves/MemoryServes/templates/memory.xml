@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE memory >
+<!-- Created by MemoryServes v ${version} -->
+<memory>
+<head>
+<creator>${item["creator"]}</creator>
+<created_on>${item["created_on"]}</created_on>
+<creation_tool>MemoryServes</creation_tool>
+<creation_tool_version>${version}</creation_tool_version>
+<num_records>${num_records}</num_records>
+<locked>false</locked>
+<is_memory>${is_memory}</is_memory>
+</head>
+<records>
+% for record in records:
+    <record>
+        <id>${record.id}</id>
+        <source><![CDATA[${replacer(record.source)}]]></source>
+        <trans><![CDATA[${replacer(record.trans)}]]></trans>
+        <context><![CDATA[${replacer(record.context)}]]></context>
+        <date_created>${to_date(record.date_created)}</date_created>
+        <last_modified>${to_date(record.last_modified)}</last_modified>
+        <reliability>${record.reliability}</reliability>
+        <validated>${truther(record.validated)}</validated>
+        <ref_count>${record.ref_count}</ref_count>
+    </record>
+% endfor
+</records>
+</memory>

@@ -12,12 +12,28 @@ Felix integrates directly with Microsoft Word, Excel, and PowerPoint via COM add
 
 ## Components
 
+### Main application
+
 | Component | Description |
 |-----------|-------------|
 | Felix | Main CAT application (C++) |
 | Word Assist | MS Word COM add-in |
 | Excel Assist | MS Excel COM add-in |
 | PowerPoint Assist | MS PowerPoint COM add-in |
+
+### Companion tools (in `companion-tools/`)
+
+These are standalone tools Ryan released as separate projects. They are archived here to keep the full Felix ecosystem in one place.
+
+| Tool | Description |
+|------|-------------|
+| [MemoryServes](companion-tools/memoryserves/) | Network TM server — share a translation memory across a team via CherryPy/HTTP |
+| [MemoryServes Exporter](companion-tools/memoryservesexporter/) | Export utility for MemoryServes TM databases |
+| [Segmenter](companion-tools/segmenter/) | Multi-format text segmenter — Word, Excel, PPT, HTML, XML, PDF, RTF, CSV (Python) |
+| [Terminology Aligner](companion-tools/terminologyaligner/) | Bilingual glossary extraction from parallel texts |
+| [Analyze Assist](companion-tools/analyzeassist/) | Pre-translation analysis tool — segment counts, TM leverage, fuzzy band statistics |
+
+All companion tools require **Python 2.7** and the dependencies listed in each tool's README.
 
 ## Documentation
 
@@ -92,10 +108,15 @@ The original source was published on Bitbucket under the MIT license.
 
 See also: [felix-cat-classic](https://github.com/arktos-ai-lab/felix-cat-classic) — a maintained fork updated for the modern toolchain, by Ernst van Gassen.
 
-## Support & Thanks
+## Support Arktos AI Lab
 
-If you find Felix useful, consider supporting the preservation and maintenance of this project:
+Arktos AI Lab is a one-person operation run by Ernst van Gassen — an independent researcher with one too many interests and not enough hours in the day. Preserving Ryan Ginstrom's work, keeping it accessible, and building on top of it all take genuine time and effort.
 
-[![Donate via PayPal](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/VanGassen)
+If this project has saved you time, helped you rediscover a tool you once loved, or simply made something possible that wasn't before — a small donation is a meaningful way to say thank you and to keep the work going.
 
-All original credit goes to **Ryan Ginstrom** who built Felix and released it as open source.
+[![Donate via PayPal](https://img.shields.io/badge/Donate%20via-PayPal-blue.svg)](https://paypal.me/VanGassen)
+
+Thank you. It genuinely makes a difference.
+
+---
+All original credit goes to **Ryan Ginstrom** who designed and built Felix and released it as open source. This repository exists because of his generosity.

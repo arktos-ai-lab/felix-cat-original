@@ -1,0 +1,58 @@
+
+Does it analyze text in text boxes?
+-------------------------------------------
+Yes, it analyzes text in text boxes in MS Word, and text boxes and some other shapes (such as graphs) in MS Excel.
+
+===========================================
+
+What kinds of memories does it support?
+-------------------------------------------
+Analyze Assist can use Felix memories (*.ftm and *.xml) and TMX memories.
+
+===========================================
+
+How are "repetitions" counted?
+-------------------------------------------
+If the same segment occurs more than once, the second and subsequent segments are counted as "repetitions." The count of repetitions is maintained across documents, so if you analyze more than one documents, and a segment occurs once in one document and once in another, the second occurence will be treated as a repetition.
+
+=====================================
+Can I save the analysis results?
+-------------------------------------
+Yes, you can save the results as an HTML file or a tab-delimited text file. You should be able to open either report file in Excel, for example if you want to create an estimate or invoice.
+
+=====================================
+
+Analyze Assist isn't analyzing my PDF file properly
+-----------------------------------------
+
+Analyze Assist will have trouble with the following types of PDF files:
+
+* Scanned PDF files (images)
+* Password-protected files
+* Encrypted files
+
+=======================================
+
+What parts of HTML files does it analyze?
+-------------------------------
+In addition to ordinary text (the text that you can see on the page), Analyze Assist also includes the following tag attributes by default:
+
+* 'title' attribute of anchor (&lt;a&gt;) tags
+* 'alt' attribute of image (&lt;img&gt;) tags
+* 'value' attribute of &lt;input&gt; tags (i.e. the text on form buttons)
+* 'description' attribute of &lt;meta&gt; tags
+* 'keywords' attribute of &lt;meta&gt; tags
+
+You can select which of these attributes you want to include in the analysis, if any. From the menu, go to <strong>Tools</strong> &gt;&gt; <strong>Options</strong>, then go to the "HTML Files" tab.
+
+======================================
+
+Can I use Memory Serves memories for analysis?
+--------------------------------------
+Yes. When you're selecting memory files in the wizard, click <strong>Remote...</strong> to enter the connection string of a <a href="http://felix-cat.com/tools/memory-serves/">Memory Serves</a> memory.
+
+=========================================
+
+Can I analyze files on the Internet?
+------------------------------
+Yes. When you're selecting files to analyze, click <strong>URL...</strong> to enter the URL of a web page you want to analyze.

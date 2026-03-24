@@ -1,0 +1,140 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Getting Started &mdash; Memory Serves 2.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '2.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Memory Serves 2.0 documentation" href="index.html" />
+    <link rel="next" title="The Web Interface" href="web-interface.html" />
+    <link rel="prev" title="Memory Serves Manual" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="web-interface.html" title="The Web Interface"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Memory Serves Manual"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>Memory Serves is a free translation-memory (TM) server. It lets you share Felix translation memories and glossaries over your local network (LAN). You can also share them remotely using a VPN.</p>
+<p>Memory Serves allows multiple translators to share their TMs/glossaries in real time. Translations added to the memory by one translator are available to the other translators instantly.</p>
+<div class="section" id="how-it-works">
+<h2>How It Works<a class="headerlink" href="#how-it-works" title="Permalink to this headline">¶</a></h2>
+<p>Memory Serves works by starting a Web server on your local machine using the open-source <a class="reference external" href="http://www.cherrypy.org/">cherrypy</a> framework. This server is visible within your LAN or VLAN only; it&#8217;s not visible to the entire Internet. The IP address it uses is that of your own computer.</p>
+</div>
+<div class="section" id="download">
+<h2>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h2>
+<img alt="Memory Serves welcome screen - create admin account" src="_images/tn_memory_serves_welcome.png" />
+<p>Download <a class="reference external" href="http://felix-cat.com/tools/memory-serves/">Memory Serves</a> and install it. When you first launch Memory Serves, it&#8217;ll prompt you to create an admin account. You&#8217;ll need to be logged in as an administrator to delete TMs/glossaries or shut down the server.</p>
+</div>
+<div class="section" id="add-memories-and-glossaries">
+<h2>Add Memories and Glossaries<a class="headerlink" href="#add-memories-and-glossaries" title="Permalink to this headline">¶</a></h2>
+<img alt="Sample Memory Serves screen - memories listing" src="_images/tn_memory_serves_small.png" />
+<p>Once you have Memory Serves installed and running, get some TMs/glossaries loaded into the server. You can either upload existing Felix memories, or create new ones. See the Help link in the Memory Serves program for details.</p>
+<p>You can also configure the search preferences if you like. See the Help link in the Memory Serves program for details.</p>
+<p>See <a class="reference internal" href="web-interface.html"><em>The Web Interface</em></a> for details.</p>
+</div>
+<div class="section" id="connect-to-a-memory-or-glossary">
+<h2>Connect to a Memory or Glossary<a class="headerlink" href="#connect-to-a-memory-or-glossary" title="Permalink to this headline">¶</a></h2>
+<p>To connect to a memory or glossary from Felix, get the connection string for the TM/glossary
+in question, and specify this in the Felix window.</p>
+<p>See <a class="reference internal" href="connecting-from-felix.html"><em>Connecting from Felix</em></a> for details.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Getting Started</a><ul>
+<li><a class="reference internal" href="#how-it-works">How It Works</a></li>
+<li><a class="reference internal" href="#download">Download</a></li>
+<li><a class="reference internal" href="#add-memories-and-glossaries">Add Memories and Glossaries</a></li>
+<li><a class="reference internal" href="#connect-to-a-memory-or-glossary">Connect to a Memory or Glossary</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Memory Serves Manual</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="web-interface.html"
+                        title="next chapter">The Web Interface</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="web-interface.html" title="The Web Interface"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Memory Serves Manual"
+             >previous</a> |</li>
+        <li><a href="index.html">Memory Serves 2.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+        <div class="footer">Documentation for <a href="/">Memory Serves</a></div>
+
+  </body>
+</html>

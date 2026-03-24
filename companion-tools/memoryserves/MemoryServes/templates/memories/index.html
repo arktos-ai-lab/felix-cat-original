@@ -1,0 +1,92 @@
+## index.html
+<%inherit file="../base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memories</h1>
+
+% if items:
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Connection string</th>
+            <th>Actions</th>
+        </tr>
+    % for item in items:
+        <tr>
+            <td><a href="view/${item["id"]}">${item["name"]}</a></td>
+        <% num = format(len(item["records"])) %>
+        <% id = item["id"] %>
+            <td align="right">${num}</td>
+            <td>http://${host}:${port}/api/mems/${item["id"]}/</td>
+            <td>
+                <a href="download/${id}">Download</a>
+                | <a href="download-tmx/${id}">TMX...</a>
+                | <a href="view/${id}">View</a>
+                | <a href="browse/${id}/1">Browse</a>
+                | <a href="search/${id}/1">Search</a>
+            % if is_admin:
+                <br /> <a href="edit/${id}">Edit</a>
+                | <a href="delete/${id}" id="delete_${id}">Delete</a>
+            % endif
+            </td>
+        </tr>
+    % endfor
+    </table>
+
+% for item in items:
+<div id="dialog_${item["id"]}" title="Delete ${item["name"]}" style="display:none;">
+	<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>The memory and all records in it will be permanently deleted and cannot be recovered. Are you sure?</p>
+</div>
+% endfor
+
+% else:
+    <p style="color:#888;">No memories</p>
+% endif
+
+<h2>Other Actions</h2>
+<ul>
+   <li><a href="add">Upload a memory</a></li>
+    <li><a href="create">Create a new memory</a></li>
+</ul>
+
+</%def>
+
+<%def name="javascript()">
+<script type="text/javascript">
+% for item in items:
+$(function() {
+    //set effect from select menu value
+    $("#delete_${item["id"]}").click(function() {
+        $("#dialog_${item["id"]}").show();
+		$("#dialog_${item["id"]}").dialog({
+			bgiframe: true,
+			resizable: true,
+			height:300,
+			modal: true,
+			overlay: {
+				backgroundColor: '#000',
+				opacity: 0.5
+			},
+			buttons: {
+				'Delete': function() {
+					$(this).dialog('close');
+                    window.location.href = "delete/${item["id"]}" ;
+				},
+				Cancel: function() {
+					$(this).dialog('close');
+                    window.location.href = "${current_page}" ;
+				}
+			}
+		});
+
+        return false ;
+	});
+});
+% endfor
+
+	</script>
+</%def>

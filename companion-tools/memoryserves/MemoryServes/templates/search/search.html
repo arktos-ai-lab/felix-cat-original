@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Search ${title} :: ${item["name"]} :: Page ${page} :: Memory Serves</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/media/reset-fonts-grids.css">
+    <link rel="stylesheet" type="text/css" href="/media/style.css" media="screen"/>
+<link type="text/css" href="/media/css/jquery-ui-1.8.custom.css" rel="Stylesheet" />
+<script type="text/javascript" src="/media/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/media/js/jquery-ui-1.8.custom.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("#tofind").focus();
+
+    //set effect from select menu value
+    $("#showhelp").click(function() {
+	$("#help_details").toggle("blind");
+
+	var currentText = $("#showhelp").text() ;
+	if (currentText == 'Search Help >>'){
+            $("#showhelp").html('&lt;&lt; Hide Help');
+            }
+	else{
+            $("#showhelp").html('Search Help &gt;&gt;');
+            }
+
+	return false;
+    });
+
+% for num, record in enumerate(records):
+    // toggle details
+    $("#view_${num}").click(function() {
+	$("#item_${num}").toggle("blind");
+
+	var currentText = $("#view_${num}").text() ;
+	if (currentText == 'Details >>'){
+            $("#view_${num}").html('&lt;&lt; Hide');
+        }
+	else{
+            $("#view_${num}").html('Details &gt;&gt;');
+        }
+	return false;
+    });
+
+    //set effect from select menu value
+    $("#edit_${num}").click(function() {
+	$("#edit_form_${num}").toggle("blind");
+	return false;
+    });
+
+    // When the testform is submitted...
+    $("#edit_form_${num}").submit(function() {
+	// post the form values via AJAX...
+	var postdata = {source: $("#edit_source_${num}").val(),
+                        trans: $("#edit_trans_${num}").val(),
+                        context: $("#edit_context_${num}").val(),
+                        reliability: $("#edit_reliability_${num}").val(),
+                        validated: $("#edit_validated_${num}:checked").is(':checked')} ;
+
+	$.post('/records/editinplace/${record.memory_id}/${record.id}', postdata, function(data) {
+		// and set the title with the result
+		$("#message_field").html(data['message']) ;
+        	$("#edit_form_${num}").toggle("blind");
+
+		$("#mainsource_${num}").html(data['source']) ;
+		$("#maintrans_${num}").html(data['trans']) ;
+
+		$("#source_${num}").html(data['source']) ;
+		$("#trans_${num}").html(data['trans']) ;
+		$("#context_${num}").html(data['context']) ;
+		$("#rel_${num}").html(data['reliability']) ;
+		$("#val_${num}").html(data['validated']) ;
+		$("#created_${num}").html(data['date_created']) ;
+		$("#created_by_${num}").html(data['created_by']) ;
+		$("#modified_${num}").html(data['last_modified']) ;
+		$("#modified_by_${num}").html(data['modified_by']) ;
+
+                $("#row_${num}").effect('highlight', {}, 2500) ;
+                $("#row_b${num}").effect('highlight', {}, 2500) ;
+                return false ;
+	       });
+        return false ;
+    });
+% endfor
+});
+</script>
+</head>
+<body>
+<div id="doc" class="yui-t7">
+   <div id="hd" role="banner">
+	<div id="menubar">
+	    <ul id="nav">
+		<li><a href="/">Home</a> </li>
+		<li><a href="/memories/">Memories</a> </li>
+		<li><a href="/glossaries/">Glossaries</a></li>
+                <li><a href="/globalsearch/">Global Search</a></li>
+		<li><a href="/media/manual/index.html">Help</a></li>
+		% if logged_in:
+		<li><a href="/users/logout/?next=${current_page}">Log Out</a></li>
+		% else:
+		<li><a href="/users/login/?next=${current_page}">Log In</a></li>
+		% endif
+		% if is_admin:
+		<li><a href="/exit/">Quit</a></li>
+		% endif
+	    </ul>
+	</div>
+   <h1>Search <a href="/${dirname}/view/${item["id"]}">${item["name"]}</a></h1>
+   </div>
+   <div id="bd" role="main">
+    <div class="yui-gc">
+
+    <div class="yui-u first">
+    <form action="/${dirname}/search/${item["id"]}/" method="get" id="searchform">
+	<table class="form">
+	    <tr>
+		<td><input class="search" name="tofind" id="tofind" type="text" value="" /></td>
+% if queryfilters:
+		<td><input type="submit" value="Refine Search" /></td>
+% else:
+		<td><input type="submit" value="Search" /></td>
+% endif
+	    </tr>
+	</table>
+% for query in queryfilters:
+<input type="hidden" name="queryfilters" value="${query["term"]}" />
+% endfor
+    </form>
+
+<div>
+% if queryfilters:
+<a href="/${dirname}/search/${item["id"]}/">New Search</a> |
+<a href="/${dirname}/replace/${item["id"]}/${replacelink}">Replace in Results</a> |
+% endif
+<a href="/${dirname}/search-help/" id="showhelp">Search Help &gt;&gt;</a>
+</div>
+<div id="help_details" style="display:none;">
+<p>Enter a term to search for that term anywhere in a source or translation. Use the tags below in the format <em>tag:term</em> to make fine-grained searches.</p>
+
+<table style="border:none;">
+<tr><th colspan="2">Text Fields</th></tr>
+<tr>
+    <td>source:</td>
+    <td>Search in source field</td>
+</tr>
+<tr>
+    <td>trans:</td>
+    <td>Search in translation field</td>
+</tr>
+<tr>
+    <td>context:</td>
+    <td>Search in context field</td>
+</tr>
+<tr><th colspan="2">Created</th></tr>
+<tr>
+    <td>created-by:</td>
+    <td>Search in creator field</td>
+</tr>
+<tr>
+    <td>created-before:</td>
+    <td>Search for records created before date (YYYY-MM-DD format)</td>
+</tr>
+<tr>
+    <td>created-after:</td>
+    <td>Search for records created after date (YYYY-MM-DD format)</td>
+</tr>
+<tr><th colspan="2">Modified</th></tr>
+<tr>
+    <td>modified-by:</td>
+    <td>Search in modifier field</td>
+</tr>
+<tr>
+    <td>modified-before:</td>
+    <td>Search for records modified before date (YYYY-MM-DD format)</td>
+</tr>
+<tr>
+    <td>modified-after:</td>
+    <td>Search for records modified after date (YYYY-MM-DD format)</td>
+</tr>
+<tr><th colspan="2">Reliability</th></tr>
+<tr>
+    <td>reliability:</td>
+    <td>Search for records with the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-gt:</td>
+    <td>Search for records with greater than the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-gte:</td>
+    <td>Search for records with at least the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-lt:</td>
+    <td>Search for records with less than the specified reliability</td>
+</tr>
+<tr>
+    <td>reliability-lte:</td>
+    <td>Search for records with no more than than the specified reliability</td>
+</tr>
+<tr><th colspan="2">Validated</th></tr>
+<tr>
+    <td>validated:</td>
+    <td>Search for records that are validated ("true") or not validated ("false")</td>
+</tr>
+
+<tr><th colspan="2">Reference Count</th></tr>
+<tr>
+    <td>refcount:</td>
+    <td>Search for records with the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-gt:</td>
+    <td>Search for records with greater than the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-gte:</td>
+    <td>Search for records with at least the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-lt:</td>
+    <td>Search for records with less than the specified reference count</td>
+</tr>
+<tr>
+    <td>refcount-lte:</td>
+    <td>Search for records with no more than than the specified reference count</td>
+</tr>
+</table>
+
+<h3>Regular Expressions</h3>
+
+<p>You can also use the "regex:" tag to specify a regular expression in your search.
+If you use another tag, the "regex:" tag should come after it (e.g. "source:regex:\d\d\d-\d\d\d\d").</p>
+
+<h3>Examples</h3>
+
+<p>Search for records created before 2009-10-01</p>
+<pre>created-before:2009-10-01</pre>
+
+<p>Search for records with a reliability of at least 5</p>
+<pre>reliability-gte:5</pre>
+
+<p>Search for the letter 'p' followed by two digits</p>
+<pre>regex:p\d\d</pre>
+
+<p>Search for records that have been validated</p>
+<pre>validated:true</pre>
+</div>
+    <div id="message_field">
+        ${msg}
+    </div>
+    </div>
+
+    <div class="yui-u">
+    % if queryfilters:
+	<h3>Query Filters</h3>
+	% for query in queryfilters:
+	<p>${query["term"]} (<a href="/${dirname}/search/${item["id"]}/${query["removelink"]}">Remove</a>)</p>
+	% endfor
+    % else:
+    <p style="color:#666;">No filters.</p>
+    % endif
+	    </div>
+</div>
+<div class="yui-g">
+% if records:
+
+<hr />
+
+<p class="paginator">
+    % if has_prev:
+        <a href="/${dirname}/search/${item["id"]}/1/${replacelink}" title="Go to first page">&lt;&lt;</a>
+        <a href="/${dirname}/search/${item["id"]}/${prev_page}/${replacelink}" title="Go to previous page">&lt;</a>
+    % endif
+
+    % for num in pages:
+        % if num == page:
+        <span class="this-page" title="Current page">${num}</span>
+        % else:
+        <a href="/${dirname}/search/${item["id"]}/${num}/${replacelink}" title="Go to page ${num}">${num}</a>
+        % endif
+    % endfor
+
+    % if has_next:
+        <a href="/${dirname}/search/${item["id"]}/${next_page}/${replacelink}" title="Go to next page">&gt;</a>
+        <a href="/${dirname}/search/${item["id"]}/${last_page}/${replacelink}" title="Go to last page">&gt;&gt;</a>
+    % endif
+
+    <span style="padding-left:20px;">Page ${page} of ${num_pages}</span>
+</p>
+
+    <table>
+	<tr>
+	    <th>&nbsp;</th>
+	    <th>Source</th>
+	    <th>Trans</th>
+	</tr>
+    % for num, record in enumerate(records):
+	<tr id="row_${num}">
+	    <td rowspan="2">
+		<% item_num =((page-1)*page_size)+(num+1) %>
+		${item_num}
+	    </td>
+	    <td id="mainsource_${num}">
+		    ${record.source}
+	    </td>
+	    <td id="maintrans_${num}">
+		${record.trans}
+	    </td>
+	</tr>
+	<tr id="row_b${num}">
+	    <td colspan="2">
+		<a href="/records/edit/${item["id"]}/${record.id}" id="edit_${num}">Edit</a>
+		| <a href="/records/delete/${item["id"]}/${record.id}/?next=/${dirname}/search/${item["id"]}/">Delete</a>
+		| <a href="/records/view/${item["id"]}/${record.id}" id="view_${num}">Details &gt;&gt;</a>
+		<div id="item_${num}" style="display:none;">
+		    <table class="props">
+			<tr>
+			    <th>Source</th>
+			    <td id="source_${num}">${record.source}</td>
+			</tr>
+			<tr>
+			    <th>Translation</th>
+			    <td id="trans_${num}">${record.trans}</td>
+			</tr>
+			<tr>
+			    <th>Context</th>
+			    <td id="context_${num}">${record.context}</td>
+			</tr>
+			<tr>
+			    <th>Reliability</th>
+			    <td id="rel_${num}">${record.reliability}</td>
+			</tr>
+			<tr>
+			    <th>Validated</th>
+			    <td id="val_${num}">${record.validated}</td>
+			</tr>
+			<tr>
+			    <th>Ref count</th>
+			    <td id="ref_${num}">${record.ref_count}</td>
+			</tr>
+			<tr>
+			    <th>Date created</th>
+			    <td id="created_${num}">${record.date_created}</td>
+			</tr>
+			<tr>
+			    <th>Created by</th>
+			    <td id="created_by_${num}">${record.created_by}</td>
+			</tr>
+			<tr>
+			    <th>Last modified</th>
+			    <td id="modified_${num}">${record.last_modified}</td>
+			</tr>
+			<tr>
+			    <th>Modified by</th>
+			    <td id="modified_by_${num}">${record.modified_by}</td>
+			</tr>
+		    </table>
+		</div>
+		<form id="edit_form_${num}" style="display:none;">
+		    <fieldset>
+
+		    <table class="form">
+			<tr>
+			    <td><label for="edit_source_${num}">Source</label></td>
+			    <td>
+				<textarea name="edit_source_${num}" id="edit_source_${num}">${record.source}</textarea>
+			    </td>
+			</tr>
+
+			<tr>
+			    <td><label for="edit_trans_${num}">Translation</label></td>
+			    <td>
+				<textarea name="edit_trans_${num}" id="edit_trans_${num}">${record.trans}</textarea>
+			    </td>
+			</tr>
+
+			<tr>
+			    <td><label for="edit_context_${num}">Context</label></td>
+			    <td>
+				<textarea name="edit_context_${num}" id="edit_context_${num}">${record.context}</textarea>
+			    </td>
+			</tr>
+			<tr>
+			    <td><label for="edit_reliability_${num}">Reliability</label></td>
+			    <td>
+				<select name="edit_reliability_${num}" id="edit_reliability_${num}">
+				    % for i in range(10):
+				    <option
+					value="${i}"
+					% if i == record.reliability:
+					selected="selected"
+					% endif
+					>${i}
+				    </option>
+				    % endfor
+				</select>
+			    </td>
+			</tr>
+			<tr>
+			    <td></td>
+			    <td>
+				<input
+				type="checkbox"
+				name="edit_validated_${num}"
+                                id="edit_validated_${num}"
+				% if record.validated:
+				checked="checked"
+				% endif
+				/> Validated<br />
+			    </td>
+			</tr>
+
+		    </table>
+
+		    </fieldset>
+
+		    <br clear="all" />
+		    <div style="float:right;">
+			<input type="submit" value="Edit" id="edit_submit_${num}"/>
+		    </div>
+		</form>
+	    </td>
+	</tr>
+    % endfor
+    </table>
+<p class="paginator">
+    % if has_prev:
+        <a href="/${dirname}/search/${item["id"]}/1/${replacelink}" title="Go to first page">&lt;&lt;</a>
+        <a href="/${dirname}/search/${item["id"]}/${prev_page}/${replacelink}" title="Go to previous page">&lt;</a>
+    % endif
+
+    % for num in pages:
+        % if num == page:
+        <span class="this-page" title="Current page">${num}</span>
+        % else:
+        <a href="/${dirname}/search/${item["id"]}/${num}/${replacelink}" title="Go to page ${num}">${num}</a>
+        % endif
+    % endfor
+
+    % if has_next:
+        <a href="/${dirname}/search/${item["id"]}/${next_page}/${replacelink}" title="Go to next page">&gt;</a>
+        <a href="/${dirname}/search/${item["id"]}/${last_page}/${replacelink}" title="Go to last page">&gt;&gt;</a>
+    % endif
+</p>
+% endif
+% if not records:
+    <p style="height: 100px; color=#333;">&nbsp;</p>
+% endif
+</div>
+    <div class="yui-gb">
+	<div class="yui-u first">
+<h2>${title}</h2>
+<ul>
+    <li><a href="/${dirname}/">List</a></li>
+    <li><a href="/${dirname}/add">Upload</a></li>
+</ul>
+	</div>
+	<div class="yui-u">
+<h2>Search</h2>
+<ul>
+    <li><a href="/${dirname}/search/${item["id"]}/">New Search</a></li>
+    <li><a href="/${dirname}/replace/${item["id"]}/">Replace</a></li>
+    % if records:
+    <li><a href="/${dirname}/searchdownload/${item["id"]}/${replacelink}">Download Results</a></li>
+    % endif
+</ul>
+		</div>
+	<div class="yui-u">
+<h2>${item["name"]}</h2>
+<ul>
+    <li><a href="/${dirname}/view/${item["id"]}">View</a></li>
+    <li><a href="/${dirname}/browse/${item["id"]}/1">Browse</a></li>
+    <li><a href="/${dirname}/download/${item["id"]}">Download</a></li>
+    % if is_admin:
+    <li><a href="/${dirname}/edit/${item["id"]}">Edit Properties</a></li>
+    % endif
+</ul>
+		</div>
+    </div>
+
+	</div>
+   <div id="footer" role="contentinfo"><p><a href="http://felix-cat.com/tools/memory-serves/" title="Visit the Memory Serves website">Memory Serves</a> version ${version}
+	| Copyright &copy; GITS
+	| <a href="/admin/">Admin</a>
+	</p></div>
+</div>
+</body>
+</html>

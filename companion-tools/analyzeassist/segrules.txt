@@ -1,0 +1,3 @@
+StopChars = .!?。．！？
+SegControlChars = true
+IgnoreNumberSegs = true

@@ -1,0 +1,24 @@
+## index.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+${msg}
+
+<h1>Memory Serves Admin Interface</h1>
+
+<p>Set preferences, manage users, and view log.</p>
+
+<ul>
+    <li><a href="/users/">View Users</a>
+        <p>View, add, edit, and remove users.</p>
+    </li>
+    <li><a href="/log/">View Log</a>
+        <p>View the Memory Serves log.</p>
+    </li>
+    <li><a href="/preferences/">Set Preferences</a>
+        <p>Set preferences for Memory Serves.</p>
+    </li>
+</ul>
+
+</%def>

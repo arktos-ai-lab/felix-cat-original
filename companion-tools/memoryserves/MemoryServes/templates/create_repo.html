@@ -1,0 +1,45 @@
+## create.html
+<%inherit file="base.html" />
+
+<%def name="content()">
+
+<h1>Create ${typename}</h1>
+
+    <form action="submitcreate" method="post">
+    <fieldset>
+
+    <table class="form">
+        <tr>
+            <td><label for="name">Name</label></td>
+            <td><input type="text" name="name" id="name" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="source_language">Source language</label></td>
+            <td><input type="text" name="source_language" id="source_language" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="target_language">Target language</label></td>
+            <td><input type="text" name="target_language" id="target_language" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="client">Client</label></td>
+            <td><input type="text" name="client" id="client" value="" /></td>
+        </tr>
+
+
+        <tr>
+            <td><label for="notes">Notes</label></td>
+            <td><textarea name="notes" id="notes"></textarea></td>
+        </tr>
+    </table>
+
+    </fieldset>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+</%def>
